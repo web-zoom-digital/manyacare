@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Calendar, CheckCircle2, AlertCircle, Phone, Stethoscope } from 'lucide-react';
 import { DEPARTMENTS } from '@/data/departments';
 
@@ -33,12 +33,30 @@ export default function AppointmentModal({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
+  // Lock body scroll and enable ESC key close
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    const originalStyle = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = originalStyle;
+    };
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.fullName || !formData.phone || !formData.consent) {
-      setErrorMsg('Please fill in all required fields and accept the privacy consent.');
+      setErrorMsg('Please fill in required fields (* patient name, mobile) and accept consent.');
       return;
     }
     setErrorMsg('');
@@ -51,34 +69,45 @@ export default function AppointmentModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200 overflow-y-auto">
-      <div className="bg-white border border-[#D7E0E8] rounded-3xl shadow-2xl w-full max-w-xl overflow-hidden my-8">
-        {/* Header */}
-        <div className="bg-[#0B3C5D] text-white p-5 sm:p-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#2196F3] flex items-center justify-center text-white shadow-md">
+    <div className="fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-4 bg-slate-900/65 backdrop-blur-xs animate-in fade-in duration-200 overflow-hidden">
+      {/* Backdrop overlay click to close */}
+      <div 
+        className="absolute inset-0 bg-transparent" 
+        onClick={onClose} 
+        aria-hidden="true" 
+      />
+
+      {/* Modal Window Container */}
+      <div className="relative bg-white border border-[#D7E0E8] rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-xl max-h-[90dvh] flex flex-col overflow-hidden z-10 my-auto">
+        
+        {/* Header - Fixed at Top & Pinned */}
+        <div className="bg-[#0B3C5D] text-white p-4 sm:p-5 flex items-center justify-between shrink-0 border-b border-white/10 shadow-sm">
+          <div className="flex items-center gap-3 min-w-0 pr-2">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#2196F3] flex items-center justify-center text-white shadow-md shrink-0">
               <Stethoscope className="w-5 h-5" />
             </div>
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white font-display">
+            <div className="min-w-0">
+              <h3 className="text-base sm:text-lg font-bold text-white font-display truncate leading-tight">
                 Book Healthcare Appointment
               </h3>
-              <p className="text-xs text-slate-300">MANYACARE HealthCity Priority Booking</p>
+              <p className="text-[11px] sm:text-xs text-slate-300 truncate">MANYACARE HealthCity Priority Booking</p>
             </div>
           </div>
+
+          {/* Close (Cut) Button - Always Visible & Easy to Tap */}
           <button
             onClick={onClose}
-            className="text-slate-300 hover:text-white p-2 rounded-xl hover:bg-white/10 transition-colors"
+            className="text-white bg-white/10 hover:bg-white/20 active:scale-95 p-2 sm:p-2.5 rounded-full transition-all shrink-0 cursor-pointer flex items-center justify-center ml-2 border border-white/10"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Form Body */}
-        <div className="p-6 sm:p-8">
+        {/* Scrollable Form Body */}
+        <div className="p-4 sm:p-6 overflow-y-auto flex-1 text-left">
           {isSubmitted ? (
-            <div className="text-center py-8 space-y-4">
+            <div className="text-center py-6 sm:py-8 space-y-4">
               <div className="w-16 h-16 bg-[#16A34A]/10 text-[#16A34A] rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
@@ -94,22 +123,22 @@ export default function AppointmentModal({
                 <p className="font-bold text-[#0B3C5D]">Direct Helpline Assistance:</p>
                 <p>Appointments: +91-9953239561 | Lab: +91-9953239562</p>
               </div>
-              <button onClick={onClose} className="manyacare-btn-primary mt-4">
+              <button onClick={onClose} className="manyacare-btn-primary mt-4 w-full sm:w-auto px-8">
                 Close Desk
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 text-left">
+            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4 text-left">
               {errorMsg && (
-                <div className="bg-red-50 text-red-700 border border-red-200 text-xs p-3.5 rounded-xl flex items-center gap-2 font-medium">
+                <div className="bg-red-50 text-red-700 border border-red-200 text-xs p-3 rounded-xl flex items-center gap-2 font-medium">
                   <AlertCircle className="w-4 h-4 shrink-0" />
                   <span>{errorMsg}</span>
                 </div>
               )}
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                     Patient Full Name *
                   </label>
                   <input
@@ -118,11 +147,11 @@ export default function AppointmentModal({
                     placeholder="Enter patient name"
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    className="manyacare-input"
+                    className="manyacare-input text-sm py-2.5 px-3.5"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                     Mobile Number *
                   </label>
                   <input
@@ -131,14 +160,14 @@ export default function AppointmentModal({
                     placeholder="+91 9953239561"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="manyacare-input"
+                    className="manyacare-input text-sm py-2.5 px-3.5"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                     Email Address
                   </label>
                   <input
@@ -146,17 +175,17 @@ export default function AppointmentModal({
                     placeholder="name@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="manyacare-input"
+                    className="manyacare-input text-sm py-2.5 px-3.5"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                     Select Department *
                   </label>
                   <select
                     value={formData.department}
                     onChange={(e) => setFormData({ ...formData, department: e.target.value })}
-                    className="manyacare-input"
+                    className="manyacare-input text-sm py-2.5 px-3.5 bg-[#F8FAFC]"
                   >
                     {DEPARTMENTS.map((dept) => (
                       <option key={dept.id} value={dept.name}>
@@ -167,9 +196,9 @@ export default function AppointmentModal({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                     Consultation Type
                   </label>
                   <select
@@ -180,7 +209,7 @@ export default function AppointmentModal({
                         consultationType: e.target.value as 'In-Clinic' | 'Home Visit' | 'Online Consultation',
                       })
                     }
-                    className="manyacare-input"
+                    className="manyacare-input text-sm py-2.5 px-3.5 bg-[#F8FAFC]"
                   >
                     <option value="In-Clinic">In-Clinic Consultation</option>
                     <option value="Home Visit">Home Doctor Visit / Sample Draw</option>
@@ -188,20 +217,20 @@ export default function AppointmentModal({
                   </select>
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                  <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                     Preferred Date
                   </label>
                   <input
                     type="date"
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className="manyacare-input"
+                    className="manyacare-input text-sm py-2.5 px-3.5"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1.5">
+                <label className="block text-xs sm:text-sm font-semibold text-[#0B3C5D] mb-1">
                   Symptoms / Medical Notes
                 </label>
                 <textarea
@@ -209,35 +238,35 @@ export default function AppointmentModal({
                   placeholder="Describe your health concern or symptoms briefly..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="manyacare-input resize-none"
+                  className="manyacare-input text-sm py-2.5 px-3.5 resize-none"
                 />
               </div>
 
-              <div className="flex items-start gap-2.5 pt-1">
+              <div className="flex items-start gap-2.5 pt-0.5">
                 <input
                   type="checkbox"
                   id="consent"
                   checked={formData.consent}
                   onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                  className="mt-1 w-4 h-4 text-[#2196F3] rounded border-slate-300 focus:ring-[#2196F3]"
+                  className="mt-0.5 w-4 h-4 text-[#2196F3] rounded border-slate-300 focus:ring-[#2196F3] shrink-0"
                 />
-                <label htmlFor="consent" className="text-xs text-[#64748B] leading-normal">
+                <label htmlFor="consent" className="text-xs text-[#64748B] leading-snug cursor-pointer select-none">
                   I agree to receive appointment confirmations, doctor visit details, and healthcare updates via Call / SMS / WhatsApp from MANYACARE HealthCity.
                 </label>
               </div>
 
-              <div className="pt-3 flex gap-3">
+              <div className="pt-2 flex gap-3">
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-1/3 manyacare-btn-secondary text-xs sm:text-sm"
+                  className="w-1/3 manyacare-btn-secondary text-xs sm:text-sm py-3"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-2/3 manyacare-btn-primary text-xs sm:text-sm font-bold py-3.5 shadow-md"
+                  className="w-2/3 manyacare-btn-primary text-xs sm:text-sm font-bold py-3 shadow-md flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <span>Processing...</span>
