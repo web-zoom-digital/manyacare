@@ -6,9 +6,47 @@ import HeroCurveDivider from '@/components/HeroCurveDivider';
 import FaqAccordion from '@/components/FaqAccordion';
 import Breadcrumb from '@/components/Breadcrumb';
 
+const BASE_URL = 'https://manyacare.in';
+
 export const metadata: Metadata = {
-  title: 'Diagnostics & Laboratory Services | MANYACARE HealthCity',
-  description: 'Pathology diagnostic laboratory services at MANYACARE HealthCity. Complete Blood Count (CBC), HbA1c, Lipid Profile, Liver & Kidney Function Tests, and Home Sample Collection.',
+  title: 'Diagnostics & Pathology Laboratory Services | MANYACARE HealthCity Greater Noida West',
+  description:
+    'Advanced pathology diagnostic laboratory services at MANYACARE HealthCity. Complete blood count (CBC), HbA1c, lipid profile, liver function test (LFT), kidney function test (KFT), thyroid profile, and free doorstep sample collection in Greater Noida West & Gaur City.',
+  keywords: [
+    'Diagnostics laboratory Greater Noida West',
+    'Pathology lab Gaur City',
+    'Blood test home sample collection Noida Extension',
+    'CBC test MANYACARE',
+    'HbA1c test Greater Noida',
+    'Full body blood package MANYACARE',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/diagnostics`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: `${BASE_URL}/diagnostics`,
+    title: 'Diagnostics & Pathology Laboratory Services | MANYACARE HealthCity',
+    description:
+      'Advanced pathology lab with free doorstep blood sample collection in Greater Noida West & Gaur City. Fast digital report delivery.',
+    siteName: 'MANYACARE HealthCity',
+    images: [
+      {
+        url: '/images/manyacare-og-social.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MANYACARE Diagnostics & Laboratory Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Diagnostics & Pathology Laboratory Services | MANYACARE HealthCity',
+    description:
+      'Pathology lab tests & free doorstep sample collection in Greater Noida West. CBC, HbA1c, LFT, KFT, Thyroid & Full Body Health Profiles.',
+    images: ['/images/manyacare-og-social.jpg'],
+  },
 };
 
 export default function DiagnosticsPage() {
@@ -17,8 +55,31 @@ export default function DiagnosticsPage() {
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
   const heroImagePath = "/images/manyacare-diagnostics-laboratory-unique-hero.jpg";
 
+  const diagnosticsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'DiagnosticLab',
+    '@id': `${BASE_URL}/diagnostics/#lab`,
+    name: 'MANYACARE Diagnostics & Pathology Laboratory',
+    url: `${BASE_URL}/diagnostics`,
+    description:
+      'NABL-aligned pathology diagnostic laboratory in Greater Noida West providing complete blood profiles, metabolic panels, hormonal assays, and free home sample collection.',
+    parentOrganization: {
+      '@id': `${BASE_URL}/#organization`,
+    },
+    availableTest: DIAGNOSTIC_TESTS.map((test) => ({
+      '@type': 'MedicalTest',
+      name: test.name,
+      description: test.description,
+      testCategory: test.category,
+    })),
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(diagnosticsSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

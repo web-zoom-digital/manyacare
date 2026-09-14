@@ -16,13 +16,47 @@ export async function generateStaticParams() {
   }));
 }
 
+const BASE_URL = 'https://manyacare.in';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const doc = DOCTORS.find((d) => d.slug === slug);
   if (!doc) return { title: 'Specialist Not Found' };
   return {
-    title: `${doc.name} — ${doc.specialty} | MANYACARE HealthCity`,
-    description: `${doc.name} is a ${doc.title} specializing in ${doc.specialty} at MANYACARE HealthCity.`,
+    title: `${doc.name} — ${doc.specialty} Specialist | MANYACARE HealthCity`,
+    description: `${doc.name} (${doc.qualifications.join(', ')}) is a senior ${doc.title} specializing in ${doc.specialty} at MANYACARE HealthCity Greater Noida West. Experience: ${doc.experienceYears || 10}+ years.`,
+    keywords: [
+      doc.name,
+      `${doc.specialty} doctor Greater Noida West`,
+      `${doc.specialty} specialist Gaur City`,
+      `Book appointment ${doc.name}`,
+      `MANYACARE ${doc.specialty}`,
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/specialists/${doc.slug}`,
+    },
+    openGraph: {
+      type: 'profile',
+      locale: 'en_IN',
+      url: `${BASE_URL}/specialists/${doc.slug}`,
+      title: `${doc.name} — ${doc.specialty} | MANYACARE HealthCity`,
+      description: `${doc.name} - ${doc.specialty} specialist at MANYACARE HealthCity. ${doc.bio}`,
+      siteName: 'MANYACARE HealthCity',
+      images: [
+        {
+          url: doc.imageUrl || '/images/manyacare-og-social.jpg',
+          width: 800,
+          height: 800,
+          alt: `${doc.name} - ${doc.specialty}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${doc.name} — ${doc.specialty} | MANYACARE HealthCity`,
+      description: `${doc.name} - ${doc.specialty} specialist at MANYACARE HealthCity Greater Noida West.`,
+      images: [doc.imageUrl || '/images/manyacare-og-social.jpg'],
+    },
   };
 }
 
@@ -36,8 +70,32 @@ export default async function SpecialistProfilePage({ params }: Props) {
 
   const dept = DEPARTMENTS.find((d) => d.slug === doctor.departmentSlug);
 
+  const physicianSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Physician',
+    '@id': `${BASE_URL}/specialists/${doctor.slug}/#physician`,
+    name: doctor.name,
+    medicalSpecialty: doctor.specialty,
+    description: doctor.bio,
+    image: doctor.imageUrl ? `${BASE_URL}${doctor.imageUrl}` : undefined,
+    url: `${BASE_URL}/specialists/${doctor.slug}`,
+    qualification: doctor.qualifications.join(', '),
+    worksFor: {
+      '@id': `${BASE_URL}/#organization`,
+    },
+    memberOf: {
+      '@type': 'MedicalOrganization',
+      name: 'MANYACARE HealthCity Clinical Council',
+    },
+    availableLanguage: ['Hindi', 'English'],
+  };
+
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(physicianSchema) }}
+      />
       {/* Back Link */}
       <Link
         href="/specialists"

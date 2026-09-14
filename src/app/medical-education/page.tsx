@@ -10,8 +10,25 @@ import Breadcrumb from '@/components/Breadcrumb';
 export default function MedicalEducationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const educationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOccupationalProgram',
+    '@id': 'https://manyacare.in/medical-education/#program',
+    name: 'MANYACARE Medical Education & Academic Guidance Division',
+    url: 'https://manyacare.in/medical-education',
+    description:
+      'Ethical academic guidance and counseling for MBBS admissions in India & Abroad, NEET PG entrance coaching, B.Sc Nursing, and Allied Paramedical Sciences.',
+    provider: {
+      '@id': 'https://manyacare.in/#organization',
+    },
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(educationSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

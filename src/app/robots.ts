@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://www.manyacare.com/sitemap.xml',
+    sitemap: 'https://manyacare.in/sitemap.xml',
   };
 }

@@ -6,9 +6,47 @@ import HeroCurveDivider from '@/components/HeroCurveDivider';
 import FaqAccordion from '@/components/FaqAccordion';
 import Breadcrumb from '@/components/Breadcrumb';
 
+const BASE_URL = 'https://manyacare.in';
+
 export const metadata: Metadata = {
-  title: 'Radiology & Imaging | MANYACARE HealthCity',
-  description: 'Digital Radiology & Imaging modalities at MANYACARE HealthCity including Digital X-Ray, Ultrasound, Colour Doppler, ECG, 2D Echo, CT Scan, MRI, and DEXA.',
+  title: 'Radiology & Digital Imaging Services | MANYACARE HealthCity Greater Noida West',
+  description:
+    'Advanced Digital Radiology & Diagnostic Imaging modalities at MANYACARE HealthCity including High-Resolution Digital X-Ray, Ultrasound (USG), Colour Doppler, ECG, 2D Echocardiography, CT Scan, MRI, and DEXA Bone Densitometry.',
+  keywords: [
+    'Radiology Greater Noida West',
+    'Digital X-Ray Gaur City',
+    'Ultrasound scan Noida Extension',
+    'ECG 2D Echo MANYACARE',
+    'Colour Doppler scan Greater Noida',
+    'CT Scan MRI MANYACARE HealthCity',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/radiology`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: `${BASE_URL}/radiology`,
+    title: 'Radiology & Digital Imaging Services | MANYACARE HealthCity',
+    description:
+      'Digital X-Ray, Ultrasound, Colour Doppler, ECG, 2D Echo, CT Scan, and MRI diagnostic radiology services in Greater Noida West.',
+    siteName: 'MANYACARE HealthCity',
+    images: [
+      {
+        url: '/images/manyacare-og-social.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MANYACARE Radiology & Digital Imaging',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Radiology & Digital Imaging Services | MANYACARE HealthCity',
+    description:
+      'High-precision Digital X-Ray, Ultrasound, 2D Echo, ECG & Radiology imaging in Greater Noida West.',
+    images: ['/images/manyacare-og-social.jpg'],
+  },
 };
 
 export default function RadiologyPage() {
@@ -17,8 +55,30 @@ export default function RadiologyPage() {
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
   const heroImagePath = "/images/cardiology-heart-care.jpg";
 
+  const radiologySchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalClinic',
+    '@id': `${BASE_URL}/radiology/#clinic`,
+    name: 'MANYACARE Radiology & Digital Imaging Center',
+    url: `${BASE_URL}/radiology`,
+    description:
+      'Diagnostic radiology and clinical imaging department equipped with Digital X-Ray, Ultrasound, Colour Doppler, 2D Echo, and ECG facilities in Greater Noida West.',
+    parentOrganization: {
+      '@id': `${BASE_URL}/#organization`,
+    },
+    availableService: RADIOLOGY_MODALITIES.map((mod) => ({
+      '@type': 'MedicalProcedure',
+      name: mod.name,
+      description: mod.description,
+    })),
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(radiologySchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

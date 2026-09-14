@@ -16,8 +16,30 @@ export default function HomeHealthcarePage() {
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
   const heroImagePath = "/images/home-healthcare-doctor-visit-hero.jpg";
 
+  const homeCareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': 'https://manyacare.in/home-healthcare/#service',
+    name: 'MANYACARE Home Healthcare Services',
+    serviceType: 'Doorstep Medical & Nursing Care',
+    url: 'https://manyacare.in/home-healthcare',
+    description:
+      'Professional home healthcare services across Greater Noida West including home doctor visits, certified nursing procedures, physiotherapy sessions, doorstep blood sample collection, and medical equipment rental.',
+    provider: {
+      '@id': 'https://manyacare.in/#organization',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'Greater Noida West & Gaur City',
+    },
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeCareSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

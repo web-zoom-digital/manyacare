@@ -28,9 +28,47 @@ import { HEALTH_PACKAGES } from '@/data/packages';
 import Breadcrumb from '@/components/Breadcrumb';
 import FaqAccordion from '@/components/FaqAccordion';
 
+const BASE_URL = 'https://manyacare.in';
+
 export const metadata: Metadata = {
-  title: 'About Us | MANYACARE HealthCity',
-  description: 'Learn about MANYACARE HealthCity, our clinical specialists, medical departments, preventive health packages, clinic locations, vision, mission, and patient care philosophy.',
+  title: 'About Us | MANYACARE HealthCity Greater Noida West',
+  description:
+    'Learn about MANYACARE HealthCity, our clinical specialists, 20+ medical departments, pathology diagnostics, home healthcare services, clinic locations, vision, mission, and patient care philosophy in Greater Noida West.',
+  keywords: [
+    'About MANYACARE HealthCity',
+    'MANYACARE healthcare mission',
+    'multispecialty clinic Greater Noida West',
+    'patient care philosophy Gaur City',
+    'MANYACARE doctors and specialists',
+    'healthcare infrastructure Noida Extension',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/about-us`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: `${BASE_URL}/about-us`,
+    title: 'About Us | MANYACARE HealthCity Greater Noida West',
+    description:
+      'Learn about MANYACARE HealthCity, our clinical specialists, 20+ medical departments, pathology diagnostics, home healthcare services, and care philosophy.',
+    siteName: 'MANYACARE HealthCity',
+    images: [
+      {
+        url: '/images/manyacare-og-social.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'About MANYACARE HealthCity',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | MANYACARE HealthCity Greater Noida West',
+    description:
+      'Discover MANYACARE HealthCity - multispecialty healthcare, diagnostics, home care, and medical education guidance in Greater Noida West.',
+    images: ['/images/manyacare-og-social.jpg'],
+  },
 };
 
 export default function AboutUsPage() {
@@ -84,8 +122,28 @@ export default function AboutUsPage() {
     },
   ];
 
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${BASE_URL}/about-us/#webpage`,
+    url: `${BASE_URL}/about-us`,
+    name: 'About Us | MANYACARE HealthCity Greater Noida West',
+    description:
+      'Learn about MANYACARE HealthCity, our clinical specialists, 20+ medical departments, pathology diagnostics, home healthcare services, and care philosophy.',
+    isPartOf: {
+      '@id': `${BASE_URL}/#website`,
+    },
+    about: {
+      '@id': `${BASE_URL}/#organization`,
+    },
+  };
+
   return (
     <div className="space-y-16 lg:space-y-24 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       {/* 1. HERO SECTION (Matching Home Page Aesthetics & Typography) */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

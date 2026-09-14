@@ -23,10 +23,47 @@ import {
   Navigation,
 } from 'lucide-react';
 
+const BASE_URL = 'https://manyacare.in';
+
 export const metadata: Metadata = {
-  title: 'Medical Departments & Specialties | MANYACARE HealthCity',
+  title: 'Medical Departments & Specialties | MANYACARE HealthCity Greater Noida West',
   description:
-    'Explore all 20+ specialized clinical departments at MANYACARE HealthCity Greater Noida West, including Internal Medicine, Cardiology, Neurology, Orthopaedics, Pediatrics, and Gynaecology.',
+    'Explore 20+ specialized clinical departments at MANYACARE HealthCity Greater Noida West: General Physician, Cardiology, Diabetology, Neurology, Chest Medicine, Orthopaedics, Gynaecology, Pediatrics, Psychiatry, and more.',
+  keywords: [
+    'Medical departments Greater Noida West',
+    'Specialist OPD clinics Gaur City',
+    'MANYACARE medical departments',
+    'General physician Noida Extension',
+    'Cardiology clinic Greater Noida',
+    'Pediatrics clinic Gaur City',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/departments`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: `${BASE_URL}/departments`,
+    title: 'Medical Departments & Specialties | MANYACARE HealthCity',
+    description:
+      'Explore 20+ specialized OPD clinical departments and senior doctor availability at MANYACARE HealthCity Greater Noida West.',
+    siteName: 'MANYACARE HealthCity',
+    images: [
+      {
+        url: '/images/manyacare-og-social.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MANYACARE Medical Departments & Specialties',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Medical Departments & Specialties | MANYACARE HealthCity',
+    description:
+      '20+ OPD departments with senior specialists in Greater Noida West & Gaur City.',
+    images: ['/images/manyacare-og-social.jpg'],
+  },
 };
 
 export default function DepartmentsIndexPage() {
@@ -34,8 +71,29 @@ export default function DepartmentsIndexPage() {
   const heroSubtitle = "Comprehensive Medical Specialties & Advanced Clinical Care";
   const heroFullHeading = `${heroTitle} - ${heroSubtitle}`;
 
+  const departmentsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'MANYACARE HealthCity Medical Departments Catalog',
+    url: `${BASE_URL}/departments`,
+    itemListElement: DEPARTMENTS.map((dept, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'MedicalSpecialty',
+        name: dept.name,
+        description: dept.shortDescription,
+        url: `${BASE_URL}/departments/${dept.slug}`,
+      },
+    })),
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(departmentsSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

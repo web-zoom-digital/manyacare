@@ -33,8 +33,32 @@ export default function SpecialistsPage() {
     setIsModalOpen(true);
   };
 
+  const specialistsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'MANYACARE HealthCity Senior Doctors & Specialists Directory',
+    url: 'https://manyacare.in/specialists',
+    itemListElement: DOCTORS.map((doc, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'Physician',
+        name: doc.name,
+        medicalSpecialty: doc.specialty,
+        description: doc.bio,
+        worksFor: {
+          '@id': 'https://manyacare.in/#organization',
+        },
+      },
+    })),
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(specialistsSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

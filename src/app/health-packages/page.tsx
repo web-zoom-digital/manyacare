@@ -86,8 +86,30 @@ export default function HealthPackagesPage() {
     },
   ];
 
+  const packagesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    '@id': 'https://manyacare.in/health-packages/#catalog',
+    name: 'MANYACARE Preventive Health Checkup Packages',
+    url: 'https://manyacare.in/health-packages',
+    description:
+      'Curated preventive health checkup packages including Full Body Assessment, Cardiac Wellness, Diabetic Profile, Women\'s Health, and Senior Citizen packages with free doorstep blood sample collection.',
+    itemListElement: HEALTH_PACKAGES.map((pkg, idx) => ({
+      '@type': 'Offer',
+      position: idx + 1,
+      name: pkg.title,
+      description: pkg.description,
+      price: pkg.price ? pkg.price.replace(/[^0-9]/g, '') || '0' : '0',
+      priceCurrency: 'INR',
+    })),
+  };
+
   return (
     <div className="pb-24 md:pb-16 space-y-12 sm:space-y-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(packagesSchema) }}
+      />
       {/* 1. HERO SECTION (Matching Home Page Style) */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

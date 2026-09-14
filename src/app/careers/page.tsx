@@ -10,8 +10,40 @@ export default function CareersPage() {
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
   const [applied, setApplied] = useState(false);
 
+  const careersSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Careers at MANYACARE HealthCity',
+    url: 'https://manyacare.in/careers',
+    itemListElement: JOB_LISTINGS.map((job, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'JobPosting',
+        title: job.title,
+        description: job.description,
+        hiringOrganization: {
+          '@id': 'https://manyacare.in/#organization',
+        },
+        jobLocation: {
+          '@type': 'Place',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Greater Noida West',
+            addressRegion: 'Uttar Pradesh',
+            addressCountry: 'IN',
+          },
+        },
+      },
+    })),
+  };
+
   return (
     <div className="space-y-12 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(careersSchema) }}
+      />
       {/* HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

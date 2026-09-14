@@ -156,7 +156,7 @@ export default function BlogIndexPage() {
                   <p className="text-sm text-[#64748B] line-clamp-3 leading-relaxed">{post.excerpt}</p>
                 </div>
               </div>
-              {/* <div className="p-5 pt-0  mt-2 flex items-center justify-between">
+              <div className="p-5 pt-0 mt-2 flex items-center justify-between">
                 <Link
                   href={`/blog/${post.slug}`}
                   className="text-sm font-bold text-[#2196F3] hover:text-[#0B3C5D] flex items-center gap-1 cursor-pointer"
@@ -164,7 +164,7 @@ export default function BlogIndexPage() {
                   Read Article
                   <ChevronRight className="w-4 h-4" />
                 </Link>
-              </div> */}
+              </div>
             </div>
           ))}
         </div>

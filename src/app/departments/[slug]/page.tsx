@@ -42,13 +42,46 @@ export async function generateStaticParams() {
   }));
 }
 
+const BASE_URL = 'https://manyacare.in';
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const dept = DEPARTMENTS.find((d) => d.slug === slug);
   if (!dept) return { title: 'Department Not Found' };
   return {
-    title: `${dept.name} | MANYACARE HealthCity`,
-    description: dept.shortDescription,
+    title: `${dept.name} Specialist Care | MANYACARE HealthCity Greater Noida West`,
+    description: `${dept.shortDescription} Access expert consultations, advanced diagnostics, and home care services in Greater Noida West & Gaur City.`,
+    keywords: [
+      `${dept.name} Greater Noida West`,
+      `${dept.name} doctor Gaur City`,
+      `${dept.name} clinic Noida Extension`,
+      `MANYACARE ${dept.name}`,
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/departments/${dept.slug}`,
+    },
+    openGraph: {
+      type: 'website',
+      locale: 'en_IN',
+      url: `${BASE_URL}/departments/${dept.slug}`,
+      title: `${dept.name} Specialist Care | MANYACARE HealthCity`,
+      description: `${dept.fullDescription}`,
+      siteName: 'MANYACARE HealthCity',
+      images: [
+        {
+          url: '/images/manyacare-og-social.jpg',
+          width: 1200,
+          height: 630,
+          alt: `${dept.name} - MANYACARE HealthCity`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${dept.name} Specialist Care | MANYACARE HealthCity`,
+      description: `${dept.shortDescription}`,
+      images: ['/images/manyacare-og-social.jpg'],
+    },
   };
 }
 
@@ -659,8 +692,25 @@ export default async function DepartmentDetailPage({ params }: Props) {
   // Silo structure links to related clinical departments
   const otherDepartments = DEPARTMENTS.filter((d) => d.slug !== department.slug).slice(0, 6);
 
+  const deptSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalSpecialty',
+    '@id': `${BASE_URL}/departments/${department.slug}/#specialty`,
+    name: department.name,
+    description: department.fullDescription,
+    url: `${BASE_URL}/departments/${department.slug}`,
+    availableService: servicesList.map((s) => ({
+      '@type': 'MedicalProcedure',
+      name: s,
+    })),
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(deptSchema) }}
+      />
       {/* 1. PREMIUM HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

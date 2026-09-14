@@ -5,7 +5,7 @@ import { BLOG_POSTS } from '@/data/blogs';
 import { LOCATIONS } from '@/data/locations';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.manyacare.com';
+  const baseUrl = 'https://manyacare.in';
 
   const staticRoutes = [
     '',

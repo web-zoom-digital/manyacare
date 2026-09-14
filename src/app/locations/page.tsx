@@ -24,10 +24,46 @@ import {
   UserCheck,
 } from 'lucide-react';
 
+const BASE_URL = 'https://manyacare.in';
+
 export const metadata: Metadata = {
-  title: 'Areas We Serve & Locations | MANYACARE HealthCity Greater Noida West',
+  title: 'Clinic Locations & Service Zones | MANYACARE HealthCity Greater Noida West',
   description:
     'Explore MANYACARE HealthCity clinic locations and serving sectors across Greater Noida West, Gaur City 1 & 2, Techzone 4, Sector 4, Sector 10, Pari Chowk, and Crossings Republik. Free doorstep sample collection available.',
+  keywords: [
+    'MANYACARE clinic locations',
+    'Healthcare Greater Noida West',
+    'Gaur City clinic location',
+    'Techzone 4 HealthCity campus',
+    'Noida Extension sample collection',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/locations`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: `${BASE_URL}/locations`,
+    title: 'Clinic Locations & Service Zones | MANYACARE HealthCity',
+    description:
+      'Explore clinic campuses and doorstep healthcare service reach across Greater Noida West & Gaur City.',
+    siteName: 'MANYACARE HealthCity',
+    images: [
+      {
+        url: '/images/manyacare-og-social.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MANYACARE Clinic Locations & Reach',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Clinic Locations & Service Zones | MANYACARE HealthCity',
+    description:
+      'Clinic hubs & doorstep sample collection reach in Greater Noida West & Gaur City.',
+    images: ['/images/manyacare-og-social.jpg'],
+  },
 };
 
 export default function LocationsIndexPage() {
@@ -35,8 +71,30 @@ export default function LocationsIndexPage() {
   const heroSubtitle = "Greater Noida West & Noida Extension Healthcare Hubs";
   const heroFullHeading = `${heroTitle} - ${heroSubtitle}`;
 
+  const locationsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'MANYACARE HealthCity Clinic Locations & Reach Directory',
+    url: `${BASE_URL}/locations`,
+    itemListElement: LOCATIONS.map((loc, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      item: {
+        '@type': 'MedicalClinic',
+        name: loc.displayName,
+        description: `MANYACARE Clinic Hub serving ${loc.cityName}`,
+        url: `${BASE_URL}/locations/${loc.slug}`,
+        address: loc.addressPlaceholder,
+      },
+    })),
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

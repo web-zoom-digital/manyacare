@@ -32,8 +32,36 @@ export default function ContactUsPage() {
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
   const heroImagePath = "/images/manyacare-clinical-locations-noida-extension.jpg";
 
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': 'https://manyacare.in/contact-us/#webpage',
+    url: 'https://manyacare.in/contact-us',
+    name: 'Contact MANYACARE HealthCity | Appointments & Enquiries',
+    description:
+      'Contact MANYACARE HealthCity for doctor appointment bookings, diagnostic lab tests, home sample collection, and general enquiries in Greater Noida West.',
+    mainEntity: {
+      '@type': 'MedicalClinic',
+      name: 'MANYACARE HealthCity Main Campus',
+      telephone: '+91-9953239561',
+      email: 'info@manyacare.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'GH-07A Market, Techzone 4, Patwari, Near Nirala Estate & Ek Murti Chowk',
+        addressLocality: 'Greater Noida West',
+        addressRegion: 'Uttar Pradesh',
+        postalCode: '201306',
+        addressCountry: 'IN',
+      },
+    },
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

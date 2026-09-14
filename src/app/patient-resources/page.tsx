@@ -5,14 +5,68 @@ import { ShieldCheck, FileText, Heart, Calendar, HelpCircle, Phone } from 'lucid
 import HeroCurveDivider from '@/components/HeroCurveDivider';
 import Breadcrumb from '@/components/Breadcrumb';
 
+const BASE_URL = 'https://manyacare.in';
+
 export const metadata: Metadata = {
-  title: 'Patient Resources & Guidance | MANYACARE HealthCity',
-  description: 'Access patient resources at MANYACARE HealthCity: online appointments, medical records, second opinions, insurance guidance, corporate health, and patient FAQs.',
+  title: 'Patient Resources & Guidance | MANYACARE HealthCity Greater Noida West',
+  description:
+    'Access patient resources at MANYACARE HealthCity: online doctor appointments, digital medical test reports, second opinion consultations, health insurance guidance, and patient support services in Greater Noida West.',
+  keywords: [
+    'Patient resources MANYACARE',
+    'Online doctor appointment Noida Extension',
+    'Diagnostic test reports MANYACARE',
+    'Medical second opinion Greater Noida',
+    'Health insurance guidance Gaur City',
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/patient-resources`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: `${BASE_URL}/patient-resources`,
+    title: 'Patient Resources & Guidance | MANYACARE HealthCity',
+    description:
+      'Online appointment scheduling, digital pathology report access, specialist second opinion, and insurance desk at MANYACARE HealthCity.',
+    siteName: 'MANYACARE HealthCity',
+    images: [
+      {
+        url: '/images/manyacare-og-social.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MANYACARE Patient Resources & Services',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Patient Resources & Guidance | MANYACARE HealthCity',
+    description:
+      'Access appointments, medical reports, specialist second opinions, and patient care guidance in Greater Noida West.',
+    images: ['/images/manyacare-og-social.jpg'],
+  },
 };
 
 export default function PatientResourcesPage() {
+  const patientResourcesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    '@id': `${BASE_URL}/patient-resources/#webpage`,
+    url: `${BASE_URL}/patient-resources`,
+    name: 'Patient Resources & Guidance | MANYACARE HealthCity',
+    description:
+      'Information to help patients navigate OPD appointments, diagnostic test reports, second opinions, and health insurance guidance.',
+    isPartOf: {
+      '@id': `${BASE_URL}/#website`,
+    },
+  };
+
   return (
     <div className="pb-16 space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(patientResourcesSchema) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

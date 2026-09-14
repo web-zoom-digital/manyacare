@@ -15,8 +15,32 @@ interface BreadcrumbProps {
 }
 
 export default function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
+  const BASE_URL = 'https://manyacare.in';
+  const breadcrumbListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: BASE_URL,
+      },
+      ...items.map((item, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 2,
+        name: item.label,
+        ...(item.href ? { item: item.href.startsWith('http') ? item.href : `${BASE_URL}${item.href}` } : {}),
+      })),
+    ],
+  };
+
   return (
     <nav aria-label="Breadcrumb" className={`flex items-center text-sm font-medium text-[#64748B] ${className}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListSchema) }}
+      />
       <ol className="inline-flex items-center space-x-2 flex-wrap">
         <li className="inline-flex items-center">
           <Link
