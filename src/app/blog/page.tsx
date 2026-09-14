@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { BLOG_POSTS } from '@/data/blogs';
 import { Search, ChevronRight, BookOpen, Clock, ShieldCheck, CheckCircle2, Sparkles } from 'lucide-react';
 import HeroCurveDivider from '@/components/HeroCurveDivider';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function BlogIndexPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,7 +24,7 @@ export default function BlogIndexPage() {
   const heroHeadingTitle = "MANYACARE Health Blog";
   const heroHeadingSubtitle = "Medically Responsible Articles & Wellness Insights";
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
-  const heroImageFileName = "manyacare-health-blog-medically-responsible-articles-wellness-insights.jpg";
+  const heroImageFileName = "rheumatology-autoimmune-care.jpg";
   const heroImagePath = `/images/${heroImageFileName}`;
 
   return (
@@ -31,6 +32,7 @@ export default function BlogIndexPage() {
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Health Blog' }]} className="mb-6" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content Area */}
             <div className="lg:col-span-7 space-y-6 text-left">
@@ -77,7 +79,7 @@ export default function BlogIndexPage() {
                   src={heroImagePath}
                   alt={heroHeadingFull}
                   title={heroHeadingFull}
-                  className="w-full h-[380px] sm:h-[450px] object-cover"
+                  className="w-full h-[360px] sm:h-[450px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                   <div className="bg-white/95 backdrop-blur-xs text-[#0B3C5D] p-4.5 rounded-2xl border border-[#D7E0E8] shadow-lg space-y-1">
@@ -154,7 +156,7 @@ export default function BlogIndexPage() {
                   <p className="text-sm text-[#64748B] line-clamp-3 leading-relaxed">{post.excerpt}</p>
                 </div>
               </div>
-              <div className="p-5 pt-0  mt-2 flex items-center justify-between">
+              {/* <div className="p-5 pt-0  mt-2 flex items-center justify-between">
                 <Link
                   href={`/blog/${post.slug}`}
                   className="text-sm font-bold text-[#2196F3] hover:text-[#0B3C5D] flex items-center gap-1 cursor-pointer"
@@ -162,7 +164,7 @@ export default function BlogIndexPage() {
                   Read Article
                   <ChevronRight className="w-4 h-4" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

@@ -32,7 +32,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     publishedDate: 'September 10, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/early-signs-of-diabetes-you-should-not-ignore.jpg',
     excerpt: 'Recognizing subtle metabolic indicators such as frequent thirst, unexpected fatigue, and slow wound healing can lead to timely diabetes diagnosis and prevention of complications.',
     relatedDepartmentSlug: 'diabetes-endocrinology',
     content: {
@@ -75,7 +75,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '6 min read',
     publishedDate: 'September 08, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/how-to-maintain-healthy-blood-sugar-levels.jpg',
     excerpt: 'Practical, evidence-backed lifestyle choices—from low glycemic index meal assembly to structured physical activity—that stabilize blood glucose.',
     relatedDepartmentSlug: 'diabetes-endocrinology',
     content: {
@@ -109,7 +109,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     publishedDate: 'September 05, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/understanding-blood-pressure-and-hypertension.jpg',
     excerpt: 'Hypertension is often called the silent killer because high vascular pressure damages blood vessels without producing obvious early symptoms.',
     relatedDepartmentSlug: 'cardiology',
     content: {
@@ -143,7 +143,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '6 min read',
     publishedDate: 'September 01, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/heart-health-everyday-habits-for-a-healthier-heart.jpg',
     excerpt: 'Simple daily choices like aerobic activity, stress reduction, balanced dietary fats, and smoke-free living protect your cardiovascular system.',
     relatedDepartmentSlug: 'cardiology',
     content: {
@@ -177,7 +177,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '4 min read',
     publishedDate: 'August 28, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/when-should-you-consult-a-general-physician.jpg',
     excerpt: 'General Physicians serve as the primary diagnostic line of defense, evaluating symptoms, ordering lab tests, and providing coordinated care.',
     relatedDepartmentSlug: 'general-physician-internal-medicine',
     content: {
@@ -205,7 +205,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     publishedDate: 'August 25, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/common-causes-of-persistent-cough-and-when-to-seek-care.jpg',
     excerpt: 'A cough lasting more than 3 to 8 weeks is considered chronic and requires medical investigation to identify underlying pulmonary or gastric causes.',
     relatedDepartmentSlug: 'chest-medicine',
     content: {
@@ -233,7 +233,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '6 min read',
     publishedDate: 'August 20, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/a-complete-guide-to-preventive-health-check-ups.jpg',
     excerpt: 'Routine preventive screenings enable early detection of metabolic, cardiac, and renal alterations before clinical symptoms manifest.',
     relatedDepartmentSlug: 'general-physician-internal-medicine',
     content: {
@@ -260,7 +260,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     publishedDate: 'August 15, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/womens-health-important-routine-screenings.jpg',
     excerpt: 'Key preventive tests for women including Pap smears, mammography, bone density scans, and thyroid profiles across different life stages.',
     relatedDepartmentSlug: 'obstetrics-gynaecology',
     content: {
@@ -287,7 +287,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     publishedDate: 'August 10, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/healthy-ageing-essential-health-tips-for-senior-citizens.jpg',
     excerpt: 'Promoting functional independence, joint mobility, cognitive stimulation, balanced nutrition, and regular health check-ups in older adults.',
     relatedDepartmentSlug: 'general-physician-internal-medicine',
     content: {
@@ -314,7 +314,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 min read',
     publishedDate: 'August 05, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/childrens-health-building-healthy-habits-from-an-early-age.jpg',
     excerpt: 'Establishing early foundation habits for paediatric nutrition, vaccination schedules, physical play, and digital screen time moderation.',
     relatedDepartmentSlug: 'pediatrics',
     content: {
@@ -341,7 +341,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '6 min read',
     publishedDate: 'August 01, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/the-role-of-nutrition-in-diabetes-and-weight-management.jpg',
     excerpt: 'Understanding macronutrient balance, portion control, and fiber-rich meal structures to manage weight and stabilize blood glucose levels.',
     relatedDepartmentSlug: 'diet-nutrition',
     content: {
@@ -368,7 +368,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '7 min read',
     publishedDate: 'July 28, 2026',
     author: { name: 'Editorial Medical Board', role: 'MANYACARE Clinical Content Team' },
-    featuredImage: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
+    featuredImage: '/images/understanding-medical-tests-cbc-hba1c-lipid-profile-and-more.jpg',
     excerpt: 'A beginner’s diagnostic guide explaining reference ranges, preparation rules, and clinical significance of common laboratory tests.',
     relatedDepartmentSlug: 'general-physician-internal-medicine',
     content: {

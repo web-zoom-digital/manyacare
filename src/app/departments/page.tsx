@@ -4,6 +4,7 @@ import { Metadata } from 'next';
 import { DEPARTMENTS } from '@/data/departments';
 import FaqAccordion from '@/components/FaqAccordion';
 import HeroCurveDivider from '@/components/HeroCurveDivider';
+import Breadcrumb from '@/components/Breadcrumb';
 import {
   Stethoscope,
   ChevronRight,
@@ -38,6 +39,7 @@ export default function DepartmentsIndexPage() {
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Medical Departments' }]} className="mb-6" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content Area */}
             <div className="lg:col-span-7 space-y-6 text-left">

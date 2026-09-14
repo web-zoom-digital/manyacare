@@ -79,20 +79,20 @@ export default function LocationsIndexPage() {
 
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-4 pt-4 text-left cursor-pointer">
-                <div className="bg-white p-4 rounded-2xl border border-[#D7E0E8] shadow-xs">
-                  <Building className="w-6 h-6 text-[#2196F3] mb-1.5" />
-                  <p className="text-sm font-bold text-[#0B3C5D]">Main Campus</p>
-                  <p className="text-xs text-slate-500">Techzone 4 Hub</p>
+                <div className="bg-white p-5 rounded-3xl border border-[#D7E0E8] shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#2196F3] transition-all duration-300">
+                  <Building className="w-7 h-7 text-[#2196F3] mb-2" />
+                  <p className="text-base font-bold text-[#0B3C5D]">Main Campus</p>
+                  <p className="text-xs sm:text-sm text-slate-500">Techzone 4 Hub</p>
                 </div>
-                <div className="bg-white p-4 rounded-2xl border border-[#D7E0E8] shadow-xs">
-                  <MapPin className="w-6 h-6 text-[#2196F3] mb-1.5" />
-                  <p className="text-sm font-bold text-[#0B3C5D]">Gaur City</p>
-                  <p className="text-xs text-slate-500">Care Hub 1 & 2</p>
+                <div className="bg-white p-5 rounded-3xl border border-[#D7E0E8] shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#2196F3] transition-all duration-300">
+                  <MapPin className="w-7 h-7 text-[#2196F3] mb-2" />
+                  <p className="text-base font-bold text-[#0B3C5D]">Gaur City</p>
+                  <p className="text-xs sm:text-sm text-slate-500">Care Hub 1 & 2</p>
                 </div>
-                <div className="bg-white p-4 rounded-2xl border border-[#D7E0E8] shadow-xs">
-                  <Truck className="w-6 h-6 text-[#2196F3] mb-1.5" />
-                  <p className="text-sm font-bold text-[#0B3C5D]">Doorstep Draw</p>
-                  <p className="text-xs text-slate-500">Free Home Sample</p>
+                <div className="bg-white p-5 rounded-3xl border border-[#D7E0E8] shadow-xs hover:shadow-md hover:-translate-y-1 hover:border-[#2196F3] transition-all duration-300">
+                  <Truck className="w-7 h-7 text-[#2196F3] mb-2" />
+                  <p className="text-base font-bold text-[#0B3C5D]">Doorstep Draw</p>
+                  <p className="text-xs sm:text-sm text-slate-500">Free Home Sample</p>
                 </div>
               </div>
             </div>
@@ -128,114 +128,123 @@ export default function LocationsIndexPage() {
 
       {/* 2. CLINICAL LOCATIONS SERVICES INFORMATION SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white border border-[#D7E0E8] rounded-3xl p-6 sm:p-10 shadow-xs space-y-6">
+        <div className="bg-white border border-[#D7E0E8] rounded-3xl p-7 sm:p-10 shadow-xs space-y-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#D7E0E8] pb-6 text-left">
             <div className="space-y-2">
-              <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-3.5 py-1 rounded-full uppercase tracking-wider inline-block">
+              <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
                 Detailed Service Coverage
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0B3C5D] font-display">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#0B3C5D] font-display">
                 Healthcare Services & Local Network
               </h2>
             </div>
-            <p className="text-sm text-[#64748B] max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-[#64748B] max-w-xl leading-relaxed">
               MANYACARE HealthCity connects residential societies with senior clinical specialists, diagnostic pathology, digital radiology, and home doctor visits.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-left cursor-pointer">
-            <div className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D7E0E8] space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center font-bold">
-                <Truck className="w-5 h-5" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div className="bg-white border border-[#D7E0E8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:border-[#2196F3] space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center group-hover:bg-[#2196F3] group-hover:text-white transition-all duration-300 shadow-xs">
+                <Truck className="w-7 h-7" />
               </div>
-              <h4 className="font-bold text-base text-[#0B3C5D]">Doorstep Collection</h4>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Free blood sample collection from your society apartment flat with digital report delivery.
-              </p>
+              <div className="space-y-2">
+                <h4 className="font-medium text-lg sm:text-xl text-[#0B3C5D] group-hover:text-[#2196F3] transition-colors">Doorstep Collection</h4>
+                <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
+                  Free blood sample collection from your society apartment flat with digital report delivery.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D7E0E8] space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center font-bold">
-                <Building className="w-5 h-5" />
+            <div className="bg-white border border-[#D7E0E8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:border-[#2196F3] space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center group-hover:bg-[#2196F3] group-hover:text-white transition-all duration-300 shadow-xs">
+                <Building className="w-7 h-7" />
               </div>
-              <h4 className="font-bold text-base text-[#0B3C5D]">Main HealthCity Hub</h4>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Techzone 4 campus equipped with 20+ specialty OPD clinics, pathology lab, and X-ray facility.
-              </p>
+              <div className="space-y-2">
+                <h4 className="font-medium text-lg sm:text-xl text-[#0B3C5D] group-hover:text-[#2196F3] transition-colors">Main HealthCity Hub</h4>
+                <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
+                  Techzone 4 campus equipped with 20+ specialty OPD clinics, pathology lab, and X-ray facility.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D7E0E8] space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center font-bold">
-                <MapPin className="w-5 h-5" />
+            <div className="bg-white border border-[#D7E0E8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:border-[#2196F3] space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center group-hover:bg-[#2196F3] group-hover:text-white transition-all duration-300 shadow-xs">
+                <MapPin className="w-7 h-7" />
               </div>
-              <h4 className="font-bold text-base text-[#0B3C5D]">Gaur City Care Hub</h4>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Dedicated consultation & sample draw point for Gaur City 1, 2, and Plaza residents.
-              </p>
+              <div className="space-y-4">
+                <h4 className="font-medium text-lg sm:text-xl text-[#0B3C5D] group-hover:text-[#2196F3] transition-colors">Gaur City Care Hub</h4>
+                <p className="text-sm sm:text-base text-[#64748B]">
+                  Dedicated consultation & sample draw point for Gaur City 1, 2, and Plaza residents.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#F7FAFC] border border-[#D7E0E8] space-y-2">
-              <div className="w-9 h-9 rounded-xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center font-bold">
-                <Home className="w-5 h-5" />
+            <div className="bg-white border border-[#D7E0E8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:border-[#2196F3] space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center group-hover:bg-[#2196F3] group-hover:text-white transition-all duration-300 shadow-xs">
+                <Home className="w-7 h-7" />
               </div>
-              <h4 className="font-bold text-base text-[#0B3C5D]">Home Doctor Visits</h4>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Doorstep physician evaluations, nursing procedures, and home physical therapy support.
-              </p>
+              <div className="space-y-2">
+                <h4 className="font-medium text-lg sm:text-xl text-[#0B3C5D] group-hover:text-[#2196F3] transition-colors">Home Doctor Visits</h4>
+                <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
+                  Doorstep physician evaluations, nursing procedures, and home physical therapy support.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. LOCATIONS CARD GRID (3 CARDS PER ROW, NO PHOTOS) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 text-left">
-        <div className="flex items-center justify-between border-b border-[#D7E0E8] pb-4">
+      {/* 3. LOCATIONS CARD GRID (3 CARDS PER ROW, PREMIUM STYLING) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 text-left">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#D7E0E8] pb-5">
           <div>
-            <h2 className="text-2xl font-bold text-[#0B3C5D]">MANYACARE HealthCity Campuses & Hubs</h2>
-            <p className="text-xs sm:text-sm text-slate-500">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#0B3C5D] font-display">MANYACARE HealthCity Campuses & Hubs</h2>
+            <p className="text-sm sm:text-base text-[#64748B] mt-1">
               Select a location hub to view detailed services, address, timings, and doctor availability
             </p>
           </div>
-          <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-3 py-1 rounded-full">
+          <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full self-start sm:self-auto">
             {LOCATIONS.length} Clinic Hubs
           </span>
         </div>
 
-        {/* 3 Cards per row layout, NO photos */}
+        {/* 3 Cards per row layout, Premium styling matching home page */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {LOCATIONS.map((loc) => (
             <div
               key={loc.id}
-              className="manyacare-card p-6 flex flex-col cursor-pointer justify-between hover:border-[#2196F3] transition-all duration-300 group"
+              className="bg-white cursor-pointer border border-[#D7E0E8] rounded-3xl p-7 sm:p-8 shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col justify-between hover:border-[#2196F3] relative group text-left space-y-6"
             >
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-[#2196F3] bg-[#EAF5FF] px-2.5 py-0.5 rounded-md">
+                  <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-3 py-1 rounded-full uppercase tracking-wider">
                     {loc.cityName}
                   </span>
                   {loc.isMainBranch && (
-                    <span className="text-[11px] font-bold text-white bg-[#0B3C5D] px-2.5 py-0.5 rounded-md">
+                    <span className="text-xs font-bold text-white bg-[#0B3C5D] px-3 py-1 rounded-full">
                       Main Campus
                     </span>
                   )}
                 </div>
 
-                <div className="space-y-2">
-                  <h3 className="text-lg font-bold text-[#0B3C5D] group-hover:text-[#2196F3] transition-colors leading-snug">
-                    {loc.displayName}
-                  </h3>
-                  <p className="text-xs text-[#64748B] flex items-start gap-1.5 leading-relaxed">
-                    <MapPin className="w-4 h-4 text-[#2196F3] shrink-0 mt-0.5" />
-                    <span>{loc.addressPlaceholder}</span>
-                  </p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center shrink-0 group-hover:bg-[#2196F3] group-hover:text-white transition-all duration-300 shadow-xs">
+                    <Building className="w-6 h-6 sm:w-7 sm:h-7" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-lg sm:text-xl font-medium text-[#0B3C5D] group-hover:text-[#2196F3] transition-colors">
+                      {loc.displayName}
+                    </h3>
+                  </div>
                 </div>
 
-                <div className="pt-2 space-y-1.5 border-t border-slate-100">
-                  <p className="text-xs font-bold text-[#0B3C5D]">Services Available:</p>
-                  <ul className="space-y-1 text-xs text-[#64748B]">
+                <div className="pt-4 space-y-2.5 border-t border-slate-100">
+                  <p className="text-sm font-bold text-[#0B3C5D]">Services Available:</p>
+                  <ul className="space-y-2 text-sm text-[#64748B]">
                     {loc.servicesAvailable.slice(0, 4).map((s, i) => (
-                      <li key={i} className="flex items-center gap-1.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A] shrink-0" />
+                      <li key={i} className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-[#16A34A] shrink-0" />
                         <span className="truncate">{s}</span>
                       </li>
                     ))}
@@ -243,13 +252,13 @@ export default function LocationsIndexPage() {
                 </div>
               </div>
 
-              <div className="pt-5 mt-4 flex items-center justify-between">
+              <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
                 <Link
                   href={`/locations/${loc.slug}`}
-                  className="text-xs sm:text-sm font-bold text-[#2196F3] hover:text-[#0B3C5D] flex items-center gap-1.5 transition-colors group-hover:translate-x-1 duration-200"
+                  className="text-sm sm:text-base font-bold text-[#2196F3] group-hover:text-[#0B3C5D] flex items-center gap-2 transition-all group-hover:translate-x-1 duration-200"
                 >
                   <span>Explore Location Hub</span>
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-5 h-5" />
                 </Link>
               </div>
             </div>
@@ -259,47 +268,47 @@ export default function LocationsIndexPage() {
 
       {/* 4. DETAILED AREAS WE SERVE SECTORS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-[#F7FAFC] border border-[#D7E0E8] rounded-3xl p-6 sm:p-10 space-y-8">
-          <div className="text-center max-w-3xl mx-auto space-y-2">
-            <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-3.5 py-1 rounded-full uppercase tracking-wider">
+        <div className="bg-[#F7FAFC] border border-[#D7E0E8] rounded-3xl p-7 sm:p-10 space-y-8">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider">
               Neighborhood Reach
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold text-[#0B3C5D] font-display">
               Consultations & Home Visits Across Sectors
             </h2>
-            <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#64748B] leading-relaxed">
               Providing fast clinical OPD care, emergency assistance, and home sample collection for residents across all major residential sectors and housing societies in Greater Noida West.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
             {AREAS_WE_SERVE_CATEGORIES.map((cat, idx) => (
-              <div key={idx} className="bg-white border border-[#D7E0E8] rounded-2xl p-6 shadow-xs space-y-4">
-                <div className="flex items-center gap-3 pb-3 border-b border-slate-100">
-                  <div className="w-10 h-10 rounded-xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center font-bold">
-                    <Navigation className="w-5 h-5" />
+              <div key={idx} className="bg-white border border-[#D7E0E8] rounded-3xl p-7 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-5 hover:border-[#2196F3]">
+                <div className="flex items-center gap-3.5 pb-4 border-b border-slate-100">
+                  <div className="w-12 h-12 rounded-2xl bg-[#EAF5FF] text-[#2196F3] flex items-center justify-center font-bold shrink-0">
+                    <Navigation className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-[#0B3C5D]">{cat.title}</h3>
-                    <p className="text-xs text-[#64748B]">{cat.description}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#0B3C5D]">{cat.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#64748B]">{cat.description}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {cat.areas.map((area, aIdx) => (
                     <Link
                       key={aIdx}
                       href={`/locations/${area.slug}`}
-                      className="flex items-center justify-between p-2.5 rounded-xl bg-[#F7FAFC] border border-[#D7E0E8] hover:border-[#2196F3] hover:bg-[#EAF5FF] transition-all group"
+                      className="flex items-center justify-between p-3 rounded-2xl bg-[#F7FAFC] border border-[#D7E0E8] hover:border-[#2196F3] hover:bg-[#EAF5FF] transition-all group"
                     >
-                      <div className="flex items-center gap-2 overflow-hidden">
-                        <MapPin className="w-3.5 h-3.5 text-[#2196F3] shrink-0" />
-                        <span className="text-xs font-semibold text-[#172B4D] group-hover:text-[#2196F3] truncate">
+                      <div className="flex items-center gap-2.5 overflow-hidden">
+                        <MapPin className="w-4 h-4 text-[#2196F3] shrink-0" />
+                        <span className="text-xs sm:text-sm font-semibold text-[#172B4D] group-hover:text-[#2196F3] truncate">
                           {area.name}
                         </span>
                       </div>
                       {area.tag && (
-                        <span className="text-[9px] font-bold text-[#2196F3] bg-[#2196F3]/10 px-1.5 py-0.5 rounded shrink-0">
+                        <span className="text-[10px] font-bold text-[#2196F3] bg-[#2196F3]/10 px-2 py-0.5 rounded-md shrink-0">
                           {area.tag}
                         </span>
                       )}
@@ -313,7 +322,7 @@ export default function LocationsIndexPage() {
       </section>
 
       {/* 5. CENTERED ACCORDION FAQ SECTION */}
-      <section className="pt-8 border-t border-[#D7E0E8] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="pt-8  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FaqAccordion
           badgeText="Locations & Reach FAQs"
           title="Frequently Asked Questions"

@@ -3,22 +3,33 @@
 import React, { useState } from 'react';
 import { JOB_LISTINGS } from '@/data/careers';
 import { Briefcase, CheckCircle2, Phone, Upload, X } from 'lucide-react';
+import HeroCurveDivider from '@/components/HeroCurveDivider';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function CareersPage() {
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
   const [applied, setApplied] = useState(false);
 
   return (
-    <div className="space-y-12 py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="border-b border-[#D7E0E8] pb-6 space-y-2 text-left">
-        <span className="text-xs font-bold text-[#2196F3] uppercase tracking-wider">
-          Workplace Opportunities
-        </span>
-        <h1 className="text-3xl font-extrabold text-[#0B3C5D]">Careers at MANYACARE HealthCity</h1>
-        <p className="text-sm text-[#64748B]">
-          Join our clinical team, nursing staff, diagnostic laboratory, or administrative operations.
-        </p>
-      </div>
+    <div className="space-y-12 pb-16">
+      {/* HERO SECTION */}
+      <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Careers' }]} className="mb-6" />
+          <div className="border-b border-[#D7E0E8] pb-6 space-y-2 text-left">
+            <span className="text-xs font-bold text-[#2196F3] uppercase tracking-wider bg-[#EAF5FF] px-4 py-1.5 rounded-full inline-block">
+              Workplace Opportunities
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#0B3C5D] font-display">Careers at MANYACARE HealthCity</h1>
+            <p className="text-base sm:text-lg text-[#64748B] max-w-2xl">
+              Join our clinical team, nursing staff, diagnostic laboratory, or administrative operations.
+            </p>
+          </div>
+        </div>
+        <HeroCurveDivider fillColor="#F7FAFC" />
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-8 space-y-6">
@@ -123,6 +134,7 @@ export default function CareersPage() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

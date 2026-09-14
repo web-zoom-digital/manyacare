@@ -453,18 +453,6 @@ export default function Header() {
               )}
             </div>
 
-            {/* Specialists */}
-            <Link
-              href="/specialists"
-              className={`px-4 py-2 rounded-xl transition-all duration-200 whitespace-nowrap ${
-                isActive('/specialists')
-                  ? 'bg-[#EAF5FF] text-[#0B3C5D] font-medium shadow-xs'
-                  : 'text-[#172B4D] hover:text-[#2196F3] hover:bg-[#EAF5FF]/60'
-              }`}
-            >
-              Team
-            </Link>
-
             {/* Health Packages */}
             <Link
               href="/health-packages"

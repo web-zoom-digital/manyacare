@@ -5,6 +5,7 @@ import { MEDICAL_EDUCATION_DATA } from '@/data/medicalEducation';
 import { GraduationCap, BookOpen, CheckCircle2, Phone, ShieldAlert, ArrowRight } from 'lucide-react';
 import AppointmentModal from '@/components/AppointmentModal';
 import HeroCurveDivider from '@/components/HeroCurveDivider';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function MedicalEducationPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,8 +14,10 @@ export default function MedicalEducationPage() {
     <div className="pb-16 space-y-12">
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-left">
-          <span className="bg-[#EAF5FF] text-[#2196F3] border border-[#2196F3]/30 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Medical Education' }]} className="mb-6" />
+          <div className="space-y-4 text-left">
+            <span className="bg-[#EAF5FF] text-[#2196F3] border border-[#2196F3]/30 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
             Academic Guidance Division
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#0B3C5D] font-display">
@@ -32,6 +35,7 @@ export default function MedicalEducationPage() {
               <span>Request Academic Counseling</span>
             </button>
           </div>
+        </div>
         </div>
         <HeroCurveDivider fillColor="#F7FAFC" />
       </section>

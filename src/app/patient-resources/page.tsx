@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { ShieldCheck, FileText, Heart, Calendar, HelpCircle, Phone } from 'lucide-react';
 import HeroCurveDivider from '@/components/HeroCurveDivider';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Patient Resources & Guidance | MANYACARE HealthCity',
@@ -14,8 +15,10 @@ export default function PatientResourcesPage() {
     <div className="pb-16 space-y-12">
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 text-left">
-          <span className="text-xs sm:text-sm font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Patient Resources' }]} className="mb-6" />
+          <div className="space-y-3 text-left">
+            <span className="text-xs sm:text-sm font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
             Patient Support Desk
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#0B3C5D] font-display">
@@ -25,12 +28,13 @@ export default function PatientResourcesPage() {
             Information to help you navigate appointments, diagnostic reports, second opinions, and medical assistance.
           </p>
         </div>
+        </div>
         <HeroCurveDivider fillColor="#F7FAFC" />
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
           {
             title: 'Online Appointments',
@@ -48,7 +52,7 @@ export default function PatientResourcesPage() {
             href: '/diagnostics',
           },
           {
-            title: 'Insurance Assistance Guidance',
+            title: 'Insurance Assistance',
             desc: 'Information regarding cashless hospitalization coordination and claim paperwork support.',
             href: '/contact-us',
           },
@@ -58,7 +62,17 @@ export default function PatientResourcesPage() {
             href: '/health-packages',
           },
           {
-            title: 'International Patient Desk',
+            title: 'Vaccination Services',
+            desc: 'Complete immunisation schedules and adult vaccination desk information.',
+            href: '/home-healthcare',
+          },
+          {
+            title: 'Emergency Care',
+            desc: '24/7 emergency care triage guidance, ambulance contact desk, and immediate response info.',
+            href: '/contact-us',
+          },
+          {
+            title: 'International Patient Services',
             desc: 'Dedicated coordination for international medical travel, visa invitation support, and tele-triage.',
             href: '/contact-us',
           },

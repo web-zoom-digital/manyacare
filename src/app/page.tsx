@@ -208,7 +208,7 @@ export default function HomePage() {
           >
             <path
               d="M0,0 C150,80 350,-20 500,45 C650,110 900,15 1200,40 L1200,120 L0,120 Z"
-              fill="currentColor"
+              fill="#F7FAFC"
             ></path>
           </svg>
         </div>
@@ -448,73 +448,7 @@ export default function HomePage() {
           </Link>
         </div> */}
       </section>
-
-      {/* 5. EXPERIENCED DOCTORS & SPECIALISTS */}
-      <section className="bg-[#EAF5FF]/60 py-16 lg:py-20 border-y border-[#D7E0E8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs sm:text-sm font-medium text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
-              CLINICAL TEAM
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#0B3C5D] font-display">
-              Meet Our Experienced Specialists
-            </h2>
-            <p className="text-base sm:text-lg text-[#64748B] leading-relaxed">
-              Consult with verified senior medical doctors across core medical disciplines.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {DOCTORS.map((doc) => (
-              <div key={doc.id} className="bg-white border border-[#D7E0E8] rounded-3xl p-6 shadow-xs hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between">
-                <div className="space-y-3">
-                  <div className="flex items-start gap-4">
-                    <img
-                      src={doc.imageUrl}
-                      alt={doc.name}
-                      className="w-16 h-16 rounded-2xl object-cover border border-[#D7E0E8] shrink-0 shadow-xs"
-                    />
-                    <div>
-                      <h3 className="text-lg font-bold text-[#0B3C5D]">{doc.name}</h3>
-                      <p className="text-sm font-semibold text-[#2196F3]">{doc.specialty}</p>
-                    </div>
-                  </div>
-
-                  <p className="text-sm sm:text-base text-[#64748B] line-clamp-3 leading-relaxed">
-                    {doc.bio}
-                  </p>
-
-                  {/* <div className="flex flex-wrap gap-1.5 pt-1">
-                    {doc.consultationTypes.map((type) => (
-                      <span
-                        key={type}
-                        className="bg-[#EAF5FF] text-[#0B3C5D] border border-[#2196F3]/30 text-xs font-bold px-3 py-1 rounded-full"
-                      >
-                        {type}
-                      </span>
-                    ))}
-                  </div> */}
-                </div>
-
-                <div className="pt-3 flex items-center justify-between gap-2">
-                  <Link
-                    href={`/specialists/${doc.slug}`}
-                    className="text-sm font-bold text-[#0B3C5D] hover:text-[#2196F3]"
-                  >
-                    View Profile
-                  </Link>
-                  <button
-                    onClick={() => openBookingModal(doc.specialty)}
-                    className="manyacare-btn-primary text-sm py-2 px-4"
-                  >
-                    Book Slot
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* 6. DIAGNOSTICS & PATHOLOGY LABORATORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

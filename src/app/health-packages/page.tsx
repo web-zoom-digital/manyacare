@@ -27,6 +27,7 @@ import {
   Home as HomeIcon,
   HelpCircle,
 } from 'lucide-react';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function HealthPackagesPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -91,16 +92,7 @@ export default function HealthPackagesPage() {
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          {/* Breadcrumb Link */}
-          <div className="mb-6">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-[#0B3C5D] hover:text-[#2196F3] transition-colors bg-white px-3.5 py-1.5 rounded-full border border-[#D7E0E8] shadow-xs"
-            >
-              <ChevronLeft className="w-4 h-4 text-[#2196F3]" />
-              <span>Back to Home</span>
-            </Link>
-          </div>
+          <Breadcrumb items={[{ label: 'Health Packages' }]} className="mb-6" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content Area */}
@@ -235,7 +227,7 @@ export default function HealthPackagesPage() {
           {filteredPackages.map((pkg) => (
             <div
               key={pkg.id}
-              className="bg-white border border-[#D7E0E8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col justify-between hover:border-[#2196F3] relative group text-left"
+              className="bg-white cursor-pointer border border-[#D7E0E8] rounded-3xl p-6 sm:p-7 shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col justify-between hover:border-[#2196F3] relative group text-left"
             >
               <div className="space-y-4">
                 {/* Header Badges */}

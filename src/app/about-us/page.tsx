@@ -25,6 +25,8 @@ import {
 import { DEPARTMENTS } from '@/data/departments';
 import { DOCTORS } from '@/data/doctors';
 import { HEALTH_PACKAGES } from '@/data/packages';
+import Breadcrumb from '@/components/Breadcrumb';
+import FaqAccordion from '@/components/FaqAccordion';
 
 export const metadata: Metadata = {
   title: 'About Us | MANYACARE HealthCity',
@@ -87,6 +89,7 @@ export default function AboutUsPage() {
       {/* 1. HERO SECTION (Matching Home Page Aesthetics & Typography) */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-10 pb-16 lg:pt-16 lg:pb-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'About Us' }]} className="mb-6" />
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Hero Content Area */}
             <div className="lg:col-span-7 space-y-6 text-left">
@@ -207,11 +210,11 @@ export default function AboutUsPage() {
             </div>
           </div>
           <div className="lg:col-span-6">
-            <div className="rounded-3xl overflow-hidden border-2 border-[#D7E0E8] shadow-xl bg-white hover-card-elevation">
+            <div className="rounded-3xl overflow-hidden border-2 border-[#D7E0E8] shadow-xl bg-white cursor-pointer hover-card-elevation">
               <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1000&auto=format&fit=crop"
+                src="/images/diabetes-endocrinology.jpg"
                 alt="MANYACARE Clinical Consultation"
-                className="w-full h-[380px] sm:h-[440px] object-cover"
+                className="w-full h-[380px] sm:h-[440px] object-fit"
               />
             </div>
           </div>
@@ -253,65 +256,7 @@ export default function AboutUsPage() {
           ))}
         </div>
       </section>
-
-      {/* 4. EXPERIENCED SPECIALISTS / CLINICAL TEAM SECTION */}
-      <section className="bg-[#EAF5FF]/60 py-16 lg:py-20 border-y border-[#D7E0E8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs sm:text-sm font-medium text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
-              EXPERT CLINICAL TEAM
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#0B3C5D] font-display">
-              Meet Our Senior Medical Specialists
-            </h2>
-            <p className="text-base sm:text-lg text-[#64748B] leading-relaxed">
-              Consult with verified Post-Graduate (MD / MS) medical doctors across internal medicine, cardiology, and diabetology.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {DOCTORS.map((doc) => (
-              <div
-                key={doc.id}
-                className="bg-white border border-[#D7E0E8] rounded-3xl p-6 shadow-xs hover:shadow-lg transition-all duration-300 space-y-4 flex flex-col justify-between cursor-pointer"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-start gap-4">
-                    <img
-                      src={doc.imageUrl}
-                      alt={doc.name}
-                      className="w-16 h-16 rounded-2xl object-cover border border-[#D7E0E8] shrink-0 shadow-xs"
-                    />
-                    <div>
-                      <h3 className="text-lg font-bold text-[#0B3C5D]">{doc.name}</h3>
-                      <p className="text-sm font-semibold text-[#2196F3]">{doc.specialty}</p>
-                    </div>
-                  </div>
-
-                  <p className="text-sm sm:text-base text-[#64748B] line-clamp-3 leading-relaxed">
-                    {doc.bio}
-                  </p>
-                </div>
-
-                <div className="pt-3 flex items-center justify-between gap-2 border-t border-slate-100">
-                  <Link
-                    href={`/specialists/${doc.slug}`}
-                    className="text-sm font-bold text-[#0B3C5D] hover:text-[#2196F3]"
-                  >
-                    View Profile
-                  </Link>
-                  <Link
-                    href="/contact-us"
-                    className="manyacare-btn-primary text-sm py-2 px-4"
-                  >
-                    Book Slot
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* 5. PREVENTIVE HEALTH CHECKUP PACKAGES SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -531,6 +476,41 @@ export default function AboutUsPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* 9. FAQ SECTION */}
+      <section className="pt-8 border-t border-[#D7E0E8] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FaqAccordion
+          badgeText="About MANYACARE"
+          title="Frequently Asked Questions"
+          subtitle="Common questions about MANYACARE HealthCity, our services, locations, and care philosophy."
+          faqs={[
+            {
+              question: 'What is MANYACARE HealthCity?',
+              answer: 'MANYACARE HealthCity is an integrated multispecialty outpatient healthcare network offering OPD consultations, pathology diagnostics, digital radiology, home healthcare services, and medical education guidance across Greater Noida West and Gaur City.',
+            },
+            {
+              question: 'What medical specialties are available at MANYACARE?',
+              answer: 'MANYACARE offers 20+ specialized OPD departments including General Physician, Cardiology, Diabetology & Endocrinology, Neurology, Chest Medicine, Rheumatology, Gynaecology, Orthopaedics, Paediatrics, Dermatology, Psychiatry, Gastroenterology, and more.',
+            },
+            {
+              question: 'Does MANYACARE provide home doctor visits and doorstep services?',
+              answer: 'Yes. MANYACARE provides qualified home doctor visits, certified nursing care, physiotherapy sessions, doorstep blood sample collection, home ECG, IV infusion, vaccination, and medical equipment rental services across Gaur City, Noida Extension, and Greater Noida West.',
+            },
+            {
+              question: 'Where is MANYACARE HealthCity located?',
+              answer: 'Our Main Campus is at GH-07A Market, Techzone 4, Patwari (Near Nirala Estate & Ek Murti Chowk), Greater Noida West, UP 201306. We also operate care hubs at Gaur City, Sector 4 Greater Noida, Pari Chowk, and Crossings Republik.',
+            },
+            {
+              question: 'What are the consultation hours at MANYACARE HealthCity?',
+              answer: 'Our clinics operate Monday through Saturday from 7:00 AM to 11:00 PM. Sunday appointments are available by prior scheduling. You can reach our helpline at +91-9953239561 for assistance.',
+            },
+            {
+              question: 'Does MANYACARE offer preventive health checkup packages?',
+              answer: 'Yes. MANYACARE offers curated preventive health checkup packages including Full Body Assessment, Cardiac Wellness, Diabetic Profile, Women\'s Health, and Senior Citizen packages with free doorstep blood sample collection and same-day digital report delivery.',
+            },
+          ]}
+        />
       </section>
     </div>
   );

@@ -19,7 +19,7 @@ export const DEPARTMENTS: Department[] = [
     shortDescription: 'Comprehensive evaluation, diagnosis, and treatment for acute illnesses, chronic diseases, and preventive healthcare.',
     fullDescription: 'Our Internal Medicine department provides holistic medical care for adults. From routine health assessments and acute infections to complex multi-system disorders, our senior physicians utilize evidence-based protocols to deliver personalized medical care.',
     iconName: 'Stethoscope',
-    imageUrl: '/service/manyacare-general-physician-internal-medicine.jpg',
+    imageUrl: '/images/general-physician-internal-medicine.jpg',
     conditionsTreated: ['Hypertension & High Blood Pressure', 'Unexplained Fever & Infections', 'Metabolic Disorders', 'Respiratory Infections', 'Fatigue & Autoimmune Conditions'],
     servicesOffered: ['Outpatient Clinical Evaluation', 'Inpatient Medical Care', 'Annual Health Screenings', 'Immunization & Vaccination', 'Chronic Disease Management'],
     faqs: [
@@ -34,7 +34,7 @@ export const DEPARTMENTS: Department[] = [
     shortDescription: 'Advanced clinical care for Type 1 & Type 2 diabetes, thyroid disorders, hormonal imbalances, and metabolic health.',
     fullDescription: 'Dedicated endocrine care focused on glycemic control, continuous glucose monitoring, thyroid gland dysfunctions, and hormonal assessment.',
     iconName: 'Activity',
-    imageUrl: '/service/manyacare-diabetes-endocrinology.jpg',
+    imageUrl: '/images/diabetes-endocrinology.jpg',
     conditionsTreated: ['Type 1 & Type 2 Diabetes', 'Hypothyroidism & Hyperthyroidism', 'Polycystic Ovarian Syndrome (PCOS)', 'Adrenal & Pituitary Disorders', 'Obesity & Metabolic Syndrome'],
     servicesOffered: ['HbA1c & Blood Glucose Testing', 'Continuous Glucose Monitoring (CGM)', 'Diabetic Foot Screening', 'Diabetic Neuropathy Evaluation', 'Customized Clinical Dietetics'],
     faqs: [
@@ -48,7 +48,7 @@ export const DEPARTMENTS: Department[] = [
     shortDescription: 'Comprehensive non-invasive cardiac evaluation, preventive cardiology, ECG, Echocardiography, and heart disease management.',
     fullDescription: 'Our Cardiology department focuses on early identification and proactive management of coronary artery disease, heart rhythm abnormalities, and vascular health.',
     iconName: 'HeartPulse',
-    imageUrl: '/service/manyacare-cardiology-heart-care.jpg',
+    imageUrl: '/images/cardiology-heart-care.jpg',
     conditionsTreated: ['Coronary Artery Disease', 'Hypertension', 'Arrhythmia & Palpitations', 'Heart Failure Management', 'High Cholesterol'],
     servicesOffered: ['12-Lead ECG Analysis', '2D Echocardiography', 'Treadmill Stress Test (TMT)', '24-Hour Holter Monitoring', 'Preventive Heart Packages'],
     faqs: [
@@ -62,7 +62,7 @@ export const DEPARTMENTS: Department[] = [
     shortDescription: 'Expert care for asthma, bronchitis, COPD, respiratory allergies, and sleep-related breathing disorders.',
     fullDescription: 'Advanced pulmonary diagnostics and clinical care for chronic coughing, breathlessness, asthma management, and lung function assessments.',
     iconName: 'Wind',
-    imageUrl: '/service/manyacare-chest-medicine-pulmonology.jpg',
+    imageUrl: '/images/chest-medicine-pulmonology.jpg',
     conditionsTreated: ['Bronchial Asthma', 'COPD', 'Pneumonia & Chest Infections', 'Allergic Rhinitis', 'Sleep Apnea'],
     servicesOffered: ['Spirometry & Pulmonary Function Test (PFT)', 'Chest Digital X-Ray', 'Nebulization & Inhalation Therapy', 'Allergy Screening'],
     faqs: [
@@ -76,7 +76,7 @@ export const DEPARTMENTS: Department[] = [
     shortDescription: 'Specialized clinical assessment for stroke, chronic migraines, epilepsy, nerve pain, and movement disorders.',
     fullDescription: 'Dedicated neurological diagnostic evaluations and long-term care plans for nervous system illnesses.',
     iconName: 'Brain',
-    imageUrl: '/service/manyacare-neurology-brain-care.jpg',
+    imageUrl: '/images/neurology-brain-care.jpg',
     conditionsTreated: ['Stroke & TIA', 'Migraine & Tension Headaches', 'Epilepsy & Seizures', 'Parkinson’s Disease', 'Peripheral Neuropathy'],
     servicesOffered: ['Neurological Clinical Exams', 'Nerve Conduction Velocity (NCV)', 'EEG & Brain Imaging Coordination', 'Post-Stroke Rehabilitation'],
     faqs: [
@@ -90,7 +90,7 @@ export const DEPARTMENTS: Department[] = [
     shortDescription: 'Diagnosis and targeted therapy for rheumatoid arthritis, lupus, gout, and systemic joint disorders.',
     fullDescription: 'Specialized management of joint inflammation, connective tissue diseases, and immune-mediated bone disorders.',
     iconName: 'Bone',
-    imageUrl: '/service/manyacare-rheumatology-autoimmune-care.jpg',
+    imageUrl: '/images/rheumatology-autoimmune-care.jpg',
     conditionsTreated: ['Rheumatoid Arthritis', 'Osteoarthritis', 'Systemic Lupus Erythematosus (SLE)', 'Gout', 'Ankylosing Spondylitis'],
     servicesOffered: ['Autoantibody Blood Panels (ANA, RF, anti-CCP)', 'Joint Fluid Analysis', 'Biologic & Disease-Modifying Drug Therapy'],
     faqs: [

@@ -7,6 +7,7 @@ import { DEPARTMENTS } from '@/data/departments';
 import { Search, Filter, Calendar, Stethoscope, ChevronRight } from 'lucide-react';
 import AppointmentModal from '@/components/AppointmentModal';
 import HeroCurveDivider from '@/components/HeroCurveDivider';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function SpecialistsPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,8 +37,10 @@ export default function SpecialistsPage() {
     <div className="pb-16 space-y-12">
       {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-[#EAF5FF]/80 via-[#F7FAFC] to-white pt-8 pb-16 lg:pt-14 lg:pb-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 text-left">
-          <span className="text-xs sm:text-sm font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Our Specialists' }]} className="mb-6" />
+          <div className="space-y-3 text-left">
+            <span className="text-xs sm:text-sm font-bold text-[#2196F3] bg-[#EAF5FF] px-4 py-1.5 rounded-full uppercase tracking-wider inline-block">
             Medical Directory
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#0B3C5D] font-display">
@@ -46,6 +49,7 @@ export default function SpecialistsPage() {
           <p className="text-base sm:text-lg text-[#64748B] max-w-2xl">
             Consult with verified senior doctors and medical specialists across disciplines.
           </p>
+        </div>
         </div>
         <HeroCurveDivider fillColor="#F7FAFC" />
       </section>
