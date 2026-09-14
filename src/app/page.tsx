@@ -94,6 +94,7 @@ export default function HomePage() {
             {/* Left Hero Content Area */}
             <div className="lg:col-span-7 space-y-6 text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EAF5FF] border border-[#2196F3]/40 text-[#0B3C5D] text-sm font-bold">
+                <img src="/manyacare-logo.jpeg" alt="MANYACARE Logo" className="w-5 h-5 rounded-full object-cover" />
                 <ShieldCheck className="w-4 h-4 text-[#2196F3]" />
                 <span>Multispecialty Digital Healthcare Platform</span>
               </div>

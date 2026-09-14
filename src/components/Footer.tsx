@@ -22,8 +22,8 @@ export default function Footer() {
           {/* Col 1: Brand Info & Social Media Links */}
           <div className="lg:col-span-3 space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded-2xl bg-[#2196F3] text-white flex items-center justify-center shadow-md group-hover:bg-[#0B3C5D] transition-all">
-                <Stethoscope className="w-6 h-6" />
+              <div className="w-11 h-11 rounded-2xl bg-white text-white flex items-center justify-center  overflow-hidden border border-slate-700/60 transition-all">
+                <img src="/manyacare-logo.jpeg" alt="MANYACARE Logo" className="w-full h-full object-fit" />
               </div>
               <div>
                 <span className="text-xl font-extrabold tracking-tight text-white block leading-tight">

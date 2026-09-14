@@ -14,8 +14,8 @@ export interface Department {
 export const DEPARTMENTS: Department[] = [
   {
     id: 'dept-1',
-    slug: 'general-physician-internal-medicine',
-    name: 'General Physician & Internal Medicine',
+    slug: 'general-physician-general-medicine',
+    name: 'General Physician & General medicine',
     shortDescription: 'Comprehensive evaluation, diagnosis, and treatment for acute illnesses, chronic diseases, and preventive healthcare.',
     fullDescription: 'Our Internal Medicine department provides holistic medical care for adults. From routine health assessments and acute infections to complex multi-system disorders, our senior physicians utilize evidence-based protocols to deliver personalized medical care.',
     iconName: 'Stethoscope',

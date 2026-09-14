@@ -200,8 +200,8 @@ export default function Header() {
           
           {/* Logo (Icon Badge + Double Line Text like Physiotherapist header) */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="w-12 h-12 rounded-2xl bg-[#2196F3] text-white flex items-center justify-center shadow-md shadow-blue-500/20 group-hover:bg-[#0B3C5D] transition-all duration-300">
-              <Stethoscope className="w-7 h-7" />
+            <div className="w-12 h-12 rounded-2xl bg-white text-white flex items-center justify-center transition-all duration-300 overflow-hidden border border-[#D7E0E8]">
+              <img src="/manyacare-logo.jpeg" alt="MANYACARE Logo" className="w-full h-full object-fit" />
             </div>
             <div>
               <span className="text-2xl font-medium tracking-tight text-[#0B3C5D] block leading-none">
@@ -541,8 +541,8 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-2.5"
               >
-                <div className="w-9 h-9 rounded-xl bg-[#2196F3] text-white flex items-center justify-center font-bold shadow-xs">
-                  <Stethoscope className="w-5 h-5" />
+                <div className="w-9 h-9 rounded-xl bg-white text-white flex items-center justify-center font-bold shadow-xs overflow-hidden border border-white/20">
+                  <img src="/manyacare-logo.jpeg" alt="MANYACARE Logo" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <span className="text-lg font-bold tracking-tight text-white block leading-none font-display">
