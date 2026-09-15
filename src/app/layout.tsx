@@ -81,6 +81,11 @@ export const metadata: Metadata = {
       'Multispecialty OPD consultations, diagnostic testing, home healthcare, and preventive health packages in Greater Noida West.',
     images: ['/images/manyacare-og-social.jpg'],
   },
+  icons: {
+    icon: '/manyacare-logo.jpeg',
+    shortcut: '/manyacare-logo.jpeg',
+    apple: '/manyacare-logo.jpeg',
+  },
   alternates: {
     canonical: BASE_URL,
   },
@@ -208,6 +213,8 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={`${inter.variable} ${poppins.variable}`}>
       <head>
+        <link rel="icon" href="/manyacare-logo.jpeg" />
+        <link rel="apple-touch-icon" href="/manyacare-logo.jpeg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
