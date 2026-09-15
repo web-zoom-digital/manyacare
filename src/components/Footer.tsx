@@ -59,7 +59,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#2196F3] hover:text-white hover:border-[#2196F3] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#DD2A7B] hover:text-white hover:border-[#DD2A7B] flex items-center justify-center transition-all"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#2196F3] hover:text-white hover:border-[#2196F3] flex items-center justify-center transition-all"
+                className="w-9 h-9 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 hover:bg-[#00008B] hover:text-white hover:border-[#00008B] flex items-center justify-center transition-all"
                 aria-label="LinkedIn"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
