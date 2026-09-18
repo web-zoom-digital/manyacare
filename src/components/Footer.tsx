@@ -268,7 +268,21 @@ export default function Footer() {
 
         {/* Footer Legal & Copyright Bar */}
         <div className="pt-6 border-t border-slate-700/60 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} MANYACARE HealthCity. All Rights Reserved.</p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p>© {new Date().getFullYear()} MANYACARE HealthCity. All Rights Reserved.</p>
+            <p>
+              Designed, Developed & SEO Managed by{' '}
+              <a
+                href="https://www.zoomdigital.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#2196F3] text-[#2196F3] font-medium"
+              >
+                Zoom Digital
+              </a>
+            </p>
+          </div>
+          
           <div className="flex flex-wrap items-center justify-center gap-4 text-slate-300 font-medium">
             <Link href="/contact-us" className="hover:text-[#2196F3] transition-colors">Privacy Policy</Link>
             <span>•</span>

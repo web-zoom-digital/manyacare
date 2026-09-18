@@ -14,7 +14,7 @@ export default function HomeHealthcarePage() {
   const heroHeadingTitle = "Home Healthcare Services";
   const heroHeadingSubtitle = "Doctor & Nursing Care at Your Doorstep";
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
-  const heroImagePath = "/images/home-healthcare-doctor-visit-hero.jpg";
+  const heroImagePath = "/images/home-healthcare-doctor-visit-hero.png";
 
   const homeCareSchema = {
     '@context': 'https://schema.org',

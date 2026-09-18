@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 // Photorealistic DSLR camera view clinical images corresponding to each department topic
 const DEPARTMENT_DSLR_IMAGES: Record<string, string> = {
-  'general-physician-internal-medicine': '/images/childrens-health-building-healthy-habits-from-an-early-age.jpg',
+  'general-physician-internal-medicine': '/images/general-physician-internal-medicine.jpg',
   'diabetes-endocrinology': '/service/manyacare-diabetes-endocrinology.jpg',
   'cardiology': '/service/manyacare-cardiology-heart-care.jpg',
   'chest-medicine': '/service/manyacare-chest-medicine-pulmonology.jpg',

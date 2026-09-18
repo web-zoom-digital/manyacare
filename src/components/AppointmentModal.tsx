@@ -68,18 +68,30 @@ export default function AppointmentModal({
     }, 800);
   };
 
+  const handleWhatsAppRedirect = () => {
+    if (!formData.fullName || !formData.phone || !formData.consent) {
+      setErrorMsg('Please fill in required fields (* patient name, mobile) and accept consent.');
+      return;
+    }
+    setErrorMsg('');
+
+    const whatsappUrl = "https://api.whatsapp.com/send/?phone=919953239561&text=Hello+Dr.+Jay+Shankarr%2C+I+want+to+consult+with+you.&type=phone_number&app_absent=0";
+    window.open(whatsappUrl, '_blank');
+
+    setIsSubmitted(true);
+  };
   return (
     <div className="fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-4 bg-slate-900/65 backdrop-blur-xs animate-in fade-in duration-200 overflow-hidden">
       {/* Backdrop overlay click to close */}
-      <div 
-        className="absolute inset-0 bg-transparent" 
-        onClick={onClose} 
-        aria-hidden="true" 
+      <div
+        className="absolute inset-0 bg-transparent"
+        onClick={onClose}
+        aria-hidden="true"
       />
 
       {/* Modal Window Container */}
       <div className="relative bg-white border border-[#D7E0E8] rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-xl max-h-[90dvh] flex flex-col overflow-hidden z-10 my-auto">
-        
+
         {/* Header - Fixed at Top & Pinned */}
         <div className="bg-[#0B3C5D] text-white p-4 sm:p-5 flex items-center justify-between shrink-0 border-b border-white/10 shadow-sm">
           <div className="flex items-center gap-3 min-w-0 pr-2">
@@ -264,16 +276,17 @@ export default function AppointmentModal({
                   Cancel
                 </button>
                 <button
-                  type="submit"
+                  type="button"
+                  onClick={handleWhatsAppRedirect}
                   disabled={isSubmitting}
-                  className="w-2/3 manyacare-btn-primary text-xs sm:text-sm font-bold py-3 shadow-md flex items-center justify-center gap-2"
+                  className="w-2/3 bg-[#25D366] hover:bg-[#1EBE57] active:scale-95 text-white text-xs sm:text-sm font-bold py-3 rounded-xl shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer disabled:opacity-60"
                 >
                   {isSubmitting ? (
                     <span>Processing...</span>
                   ) : (
                     <>
                       <Calendar className="w-4 h-4" />
-                      <span>Confirm Booking</span>
+                      <span>Consult On Whatsapp</span>
                     </>
                   )}
                 </button>

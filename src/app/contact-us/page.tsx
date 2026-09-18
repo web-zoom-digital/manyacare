@@ -30,7 +30,7 @@ export default function ContactUsPage() {
   const heroHeadingTitle = "Contact MANYACARE HealthCity";
   const heroHeadingSubtitle = "We are Here to Help & Guide You";
   const heroHeadingFull = `${heroHeadingTitle} - ${heroHeadingSubtitle}`;
-  const heroImagePath = "/images/manyacare-clinical-locations-noida-extension.jpg";
+  const heroImagePath = "/doctor-profile-image.jpeg";
 
   const contactSchema = {
     '@context': 'https://schema.org',
@@ -112,7 +112,7 @@ export default function ContactUsPage() {
                   src={heroImagePath}
                   alt={heroHeadingFull}
                   title={heroHeadingFull}
-                  className="w-full h-[360px] sm:h-[450px] object-cover"
+                  className="w-full h-[360px] sm:h-[450px] object-fit"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                   <div className="bg-white/95 backdrop-blur-xs text-[#0B3C5D] p-4.5 rounded-2xl border border-[#D7E0E8] shadow-lg space-y-1">

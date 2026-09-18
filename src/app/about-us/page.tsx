@@ -208,19 +208,17 @@ export default function AboutUsPage() {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md lg:max-w-none rounded-3xl overflow-hidden border-2 border-[#D7E0E8] shadow-xl bg-white">
                 <img
-                  src="/manyacare-about-hero.jpg"
+                  src="/doctor-profile-image.jpeg"
                   alt="MANYACARE Healthcare Team & Clinical Specialists"
-                  className="w-full h-[380px] sm:h-[440px] object-cover"
+                  className="w-full h-[380px] sm:h-[440px] object-fit"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B3C5D]/80 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
                   <div className="bg-white/95 backdrop-blur-xs text-[#0B3C5D] p-4.5 rounded-2xl border border-[#D7E0E8] shadow-lg space-y-1">
                     <p className="text-sm font-bold flex items-center gap-2 text-[#0B3C5D]">
                       <CheckCircle2 className="w-5 h-5 text-[#16A34A]" />
-                      Compassionate Clinical Excellence
+                      DR JAY SHANKARR,MD,PHYSICIAN,ManyaCare HealthCity
                     </p>
-                    <p className="text-xs sm:text-sm text-slate-600">
-                      Unifying outpatient consultations, pathology labs, and home healthcare.
-                    </p>
+                    
                   </div>
                 </div>
               </div>
