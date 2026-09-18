@@ -69,17 +69,38 @@ export default function AppointmentModal({
   };
 
   const handleWhatsAppRedirect = () => {
-    if (!formData.fullName || !formData.phone || !formData.consent) {
-      setErrorMsg('Please fill in required fields (* patient name, mobile) and accept consent.');
-      return;
-    }
-    setErrorMsg('');
+  if (!formData.fullName || !formData.phone || !formData.consent) {
+    setErrorMsg('Please fill in required fields (* patient name, mobile) and accept consent.');
+    return;
+  }
+  setErrorMsg('');
 
-    const whatsappUrl = "https://api.whatsapp.com/send/?phone=919953239561&text=Hello+Dr.+Jay+Shankarr%2C+I+want+to+consult+with+you.&type=phone_number&app_absent=0";
-    window.open(whatsappUrl, '_blank');
+  // Build message dynamically with all filled details
+  let message = `Hello ManyaCare Center, I want to book an appointment.\n\n`;
+  message += `Patient Name: ${formData.fullName}\n`;
+  message += `Mobile Number: ${formData.phone}\n`;
+  if (formData.email) {
+    message += `Email: ${formData.email}\n`;
+  }
+  message += `Department: ${formData.department}\n`;
+  message += `Consultation Type: ${formData.consultationType}\n`;
+  if (formData.preferredDate) {
+    message += `Preferred Date: ${formData.preferredDate}\n`;
+  }
+  if (formData.preferredTime) {
+    message += `Preferred Time: ${formData.preferredTime}\n`;
+  }
+  if (formData.message) {
+    message += `Symptoms/Notes: ${formData.message}\n`;
+  }
 
-    setIsSubmitted(true);
-  };
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://api.whatsapp.com/send/?phone=919953239561&text=${encodedMessage}&type=phone_number&app_absent=0`;
+  
+  window.open(whatsappUrl, '_blank');
+
+  setIsSubmitted(true);
+};
   return (
     <div className="fixed inset-0 z-[1000] flex items-center justify-center p-3 sm:p-4 bg-slate-900/65 backdrop-blur-xs animate-in fade-in duration-200 overflow-hidden">
       {/* Backdrop overlay click to close */}

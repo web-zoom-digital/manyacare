@@ -142,7 +142,7 @@ export default async function LocationLandingPage({ params }: Props) {
                   className="manyacare-btn-primary py-3.5 px-6 text-sm sm:text-base shadow-md"
                 >
                   <Calendar className="w-5 h-5" />
-                  <span>Call Location: {location.phone}</span>
+                  <span>Call : {location.phone}</span>
                 </a>
                 <a
                   href="https://wa.me/919953239561?text=Hello%20MANYACARE%20HealthCity%2C%20I%20want%20to%20inquire%20about%20services."
@@ -150,7 +150,7 @@ export default async function LocationLandingPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className="manyacare-btn-secondary py-3.5 px-6 text-sm sm:text-base"
                 >
-                  <MessageCircle className="w-5 h-5 text-[#25D366]" />
+                  <Phone className="w-5 h-5 text-[#25D366]" />
                   <span>WhatsApp Inquiry</span>
                 </a>
               </div>
