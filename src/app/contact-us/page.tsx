@@ -24,6 +24,8 @@ export default function ContactUsPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const whatsappUrl = "https://api.whatsapp.com/send/?phone=919953239561&text=Hello+Dr.+Jay+Shankarr%2C+I+want+to+consult+with+you.&type=phone_number&app_absent=0";
+    window.open(whatsappUrl, '_blank');
     setSubmitted(true);
   };
 
