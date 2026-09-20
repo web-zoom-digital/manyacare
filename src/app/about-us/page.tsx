@@ -75,7 +75,7 @@ export default function AboutUsPage() {
   const locationCampuses = [
     {
       title: 'MANYACARE HealthCity Main Campus',
-      subtitle: 'GH-07A Market, Techzone 4, Patwari (Near Nirala Estate & Ek Murti Chowk), Greater Noida West, UP 201306',
+      subtitle: 'Address- GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR',
       phone: '+91-9953239561',
       labPhone: '+91-9953239562',
       hours: 'Mon - Sat: 8:00 AM - 8:00 PM | Sun: 9:00 AM - 2:00 PM',
@@ -218,7 +218,7 @@ export default function AboutUsPage() {
                       <CheckCircle2 className="w-5 h-5 text-[#16A34A]" />
                       DR JAY SHANKARR,MD,PHYSICIAN,ManyaCare HealthCity
                     </p>
-                    
+
                   </div>
                 </div>
               </div>

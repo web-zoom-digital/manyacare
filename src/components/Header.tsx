@@ -84,7 +84,7 @@ export default function Header() {
   const locationCampuses = [
     {
       title: 'Main HealthCity Campus',
-      subtitle: 'Techzone 4, Patwari (Near Nirala Estate & Ek Murti)',
+      subtitle: 'GH-07,Spring Meadows market,tech zone 4',
       href: '/locations/healthcity-main-campus',
       icon: Building,
       badge: 'Main Hub',

@@ -49,7 +49,7 @@ export default function ContactUsPage() {
       email: 'info@manyacare.com',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'GH-07A Market, Techzone 4, Patwari, Near Nirala Estate & Ek Murti Chowk',
+        streetAddress: 'GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR',
         addressLocality: 'Greater Noida West',
         addressRegion: 'Uttar Pradesh',
         postalCode: '201306',
@@ -179,7 +179,7 @@ export default function ContactUsPage() {
                 <div>
                   <p className="font-bold text-[#0B3C5D]">Main Campus Address</p>
                   <p className="text-[#64748B] text-sm">
-                    MANYACARE HealthCity Main Campus (Address parameters to be updated upon launch)
+                    GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR
                   </p>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function ContactUsPage() {
         <div className="rounded-2xl overflow-hidden border border-[#D7E0E8] shadow-md h-[400px] w-full">
           <iframe
             title="MANYACARE HealthCity Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562123!2d77.2090!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjhCsDM2JzUwLjAiTiA3N8KwMTInMzIuNCJF!5e0!3m2!1sen!2sin!4v1650000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.94813358346!2d77.4456342088062!3d28.58945681262447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff929bee52d%3A0xbed4ec0fb6a70133!2sManyaCare%20HealthCity!5e0!3m2!1sen!2sin!4v1724547883221!5m2!1sen!2sin"
             className="w-full h-full border-0"
             loading="lazy"
           />

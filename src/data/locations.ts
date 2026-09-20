@@ -78,14 +78,14 @@ export const LOCATIONS: LocationItem[] = [
     id: 'loc-main',
     slug: 'healthcity-main-campus',
     cityName: 'Noida Extension',
-    localityName: 'Techzone 4, Patwari',
+    localityName: 'Address- GH-07,Spring Meadows market,tech zone 4',
     displayName: 'MANYACARE HealthCity Main Campus',
-    addressPlaceholder: 'GH-07A Market, Techzone 4, Patwari (Near Nirala Estate & Ek Murti Chowk), Greater Noida West, Uttar Pradesh 201306',
+    addressPlaceholder: 'GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR',
     phone: '+91-9953239561',
     labPhone: '+91-9953239562',
     email: 'info@manyacare.com',
     operatingHours: 'Mon - Sat: 8:00 AM - 8:00 PM | Sun: 9:00 AM - 2:00 PM (24/7 Helpline Available)',
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562123!2d77.435!3d28.595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjhCsDM1JzQyLjAiTiA3N8KwMjYnMDYuMCJF!5e0!3m2!1sen!2sin!4v1650000000000',
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562123!2d77.4456342088062!3d28.58945681262447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff929bee52d%3A0xbed4ec0fb6a70133!2sManyaCare%20HealthCity!5e0!3m2!1sen!2sin!4v1724547883221!5m2!1sen!2sin',
     isMainBranch: true,
     isPlaceholder: false,
     heroImage: '/location/manyacare-healthcity-main-campus-noida-extension.jpg',
@@ -100,7 +100,7 @@ export const LOCATIONS: LocationItem[] = [
     faqs: [
       {
         question: 'Where is MANYACARE HealthCity Main Campus located?',
-        answer: 'We are located at GH-07A Market, Techzone 4, Patwari, right opposite Nirala Estate near Ek Murti Chowk in Greater Noida West.'
+        answer: 'We are located at GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR'
       },
       {
         question: 'What are the consultation hours at the Main Campus?',

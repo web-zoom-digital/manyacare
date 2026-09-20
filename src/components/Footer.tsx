@@ -214,45 +214,37 @@ export default function Footer() {
             <div className="pt-3 border-t border-slate-700/60 space-y-3 text-xs">
               <div>
                 <p className="font-bold text-[#2196F3] uppercase tracking-wider text-[11px]">
-                  MAIN CAMPUS (TECHZONE 4)
+                  GH-07,Spring Meadows market,tech zone 4
                 </p>
                 <p className="text-slate-300 leading-normal mt-0.5">
-                  GH-07A Market, Techzone 4, Patwari (Near Nirala Estate & Ek Murti Chowk), Greater Noida West, UP 201306
+                  Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKAR MARKET
                 </p>
               </div>
 
-              <div>
-                <p className="font-bold text-[#2196F3] uppercase tracking-wider text-[11px]">
-                  GAUR CITY CARE HUB
-                </p>
-                <p className="text-slate-300 leading-normal mt-0.5">
-                  Gaur City 1 & 2 Plaza, Noida Extension, Greater Noida West, UP 201318
-                </p>
-              </div>
+              
             </div>
           </div>
         </div>
 
         {/* Dual Embedded Interactive Google Map Cards (Reference Image Layout) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 justify-center items-center">
           {/* Map Card 1: Main Campus */}
           <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-800 shadow-xl h-64 group">
             {/* Pill Overlay Badge */}
             <div className="absolute top-4 left-4 z-10 bg-slate-900/90 backdrop-blur-md text-white text-xs font-extrabold px-4 py-2 rounded-full border border-slate-700 flex items-center gap-2 shadow-md">
               <MapPin className="w-3.5 h-3.5 text-[#2196F3]" />
-              <span>MAIN CAMPUS (TECHZONE 4, PATWARI)</span>
+              <span>GH-07,Spring Meadows market,tech zone 4</span>
             </div>
             <iframe
               title="MANYACARE HealthCity Main Campus Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562123!2d77.435!3d28.595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjhCsDM1JzQyLjAiTiA3N8KwMjYnMDYuMCJF!5e0!3m2!1sen!2sin!4v1650000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.94813358346!2d77.4456342088062!3d28.58945681262447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff929bee52d%3A0xbed4ec0fb6a70133!2sManyaCare%20HealthCity!5e0!3m2!1sen!2sin!4v1724547883221!5m2!1sen!2sin"
               className="w-full h-full border-0 transition-all duration-300"
               loading="lazy"
             />
           </div>
 
           {/* Map Card 2: Gaur City Care Hub */}
-          <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-800 shadow-xl h-64 group">
-            {/* Pill Overlay Badge */}
+          {/* <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-800 shadow-xl h-64 group">
             <div className="absolute top-4 left-4 z-10 bg-slate-900/90 backdrop-blur-md text-white text-xs font-extrabold px-4 py-2 rounded-full border border-slate-700 flex items-center gap-2 shadow-md">
               <MapPin className="w-3.5 h-3.5 text-[#2196F3]" />
               <span>GAUR CITY CARE HUB (GAUR CITY 1 & 2)</span>
@@ -263,7 +255,7 @@ export default function Footer() {
               className="w-full h-full border-0  transition-all duration-300"
               loading="lazy"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Footer Legal & Copyright Bar */}

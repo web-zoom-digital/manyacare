@@ -510,7 +510,7 @@ export default async function LocationLandingPage({ params }: Props) {
         </div>
 
         {/* 4. LOCATION-SPECIFIC FULL-WIDTH GOOGLE MAP SECTION (BELOW FAQ) */}
-        <div className="pt-8 border-t border-[#D7E0E8]">
+        <div>
           <div className="bg-white border border-[#D7E0E8] rounded-3xl overflow-hidden shadow-xs text-left">
             <div className="p-6 sm:p-8 border-b border-[#D7E0E8] flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div className="space-y-1">
