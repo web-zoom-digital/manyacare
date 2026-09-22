@@ -84,7 +84,7 @@ export default function Header() {
   const locationCampuses = [
     {
       title: 'Main HealthCity Campus',
-      subtitle: 'GH-07,Spring Meadows market,tech zone 4',
+      subtitle: 'Address 1: GH-07, Tech Zone 4 | Address 2: Sector 12',
       href: '/locations/healthcity-main-campus',
       icon: Building,
       badge: 'Main Hub',

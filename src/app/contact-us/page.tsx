@@ -49,7 +49,7 @@ export default function ContactUsPage() {
       email: 'info@manyacare.com',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR',
+        streetAddress: 'Address 1: GH-07, Spring Meadows Market, Tech Zone 4 | Address 2: Plot No-127, Block-A, Sector 12, Noida Extension, ManyaCare HealthCity, Dr Jay Shankar Market',
         addressLocality: 'Greater Noida West',
         addressRegion: 'Uttar Pradesh',
         postalCode: '201306',
@@ -176,11 +176,20 @@ export default function ContactUsPage() {
 
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#2196F3] shrink-0 mt-0.5" />
-                <div>
-                  <p className="font-bold text-[#0B3C5D]">Main Campus Address</p>
-                  <p className="text-[#64748B] text-sm">
-                    GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR
-                  </p>
+                <div className="space-y-2">
+                  <p className="font-bold text-[#0B3C5D]">Campus Addresses</p>
+                  <div>
+                    <p className="font-bold text-[#2196F3] text-xs uppercase tracking-wider">Address 1</p>
+                    <p className="text-[#64748B] text-sm">
+                      GH-07, Spring Meadows Market, Tech Zone 4, Noida Extension
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#2196F3] text-xs uppercase tracking-wider">Address 2</p>
+                    <p className="text-[#64748B] text-sm">
+                      Plot No-127, Block-A, Sector 12, Noida Extension, ManyaCare HealthCity, Dr Jay Shankar Market
+                    </p>
+                  </div>
                 </div>
               </div>
 

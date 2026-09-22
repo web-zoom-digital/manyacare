@@ -213,15 +213,24 @@ export default function Footer() {
             {/* Branch Addresses List */}
             <div className="pt-3 border-t border-slate-700/60 space-y-3 text-xs">
               <div>
-                <p className="font-bold text-[#2196F3] uppercase tracking-wider text-[11px]">
-                  GH-07,Spring Meadows market,tech zone 4
+                <p className="font-bold text-[#2196F3] uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 shrink-0 text-[#2196F3]" />
+                  <span>Branch 1 (Tech Zone 4)</span>
                 </p>
-                <p className="text-slate-300 leading-normal mt-0.5">
-                  Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKAR MARKET
+                <p className="text-slate-300 leading-normal mt-1 pl-4">
+                  GH-07, Spring Meadows Market, Tech Zone 4, Noida Extension
                 </p>
               </div>
 
-              
+              <div>
+                <p className="font-bold text-[#2196F3] uppercase tracking-wider text-[11px] flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5 shrink-0 text-[#2196F3]" />
+                  <span>Branch 2 (Sector 12)</span>
+                </p>
+                <p className="text-slate-300 leading-normal mt-1 pl-4">
+                  Plot No-127, Block-A, Sector 12, Noida Extension, ManyaCare HealthCity, Dr Jay Shankar Market
+                </p>
+              </div>
             </div>
           </div>
         </div>

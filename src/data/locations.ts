@@ -78,9 +78,9 @@ export const LOCATIONS: LocationItem[] = [
     id: 'loc-main',
     slug: 'healthcity-main-campus',
     cityName: 'Noida Extension',
-    localityName: 'Address- GH-07,Spring Meadows market,tech zone 4',
+    localityName: 'Tech Zone 4 & Sector 12, Greater Noida West',
     displayName: 'MANYACARE HealthCity Main Campus',
-    addressPlaceholder: 'GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR',
+    addressPlaceholder: 'Address 1: GH-07, Spring Meadows Market, Tech Zone 4, Noida Extension | Address 2: Plot No-127, Block-A, Sector 12, Noida Extension, ManyaCare HealthCity, Dr Jay Shankar Market',
     phone: '+91-9953239561',
     labPhone: '+91-9953239562',
     email: 'info@manyacare.com',
@@ -100,7 +100,7 @@ export const LOCATIONS: LocationItem[] = [
     faqs: [
       {
         question: 'Where is MANYACARE HealthCity Main Campus located?',
-        answer: 'We are located at GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR'
+        answer: 'Our main campus facilities are located at - Address 1: GH-07, Spring Meadows Market, Tech Zone 4, Noida Extension. Address 2: Plot No-127, Block-A, Sector 12, Noida Extension, ManyaCare HealthCity, Dr Jay Shankar Market.'
       },
       {
         question: 'What are the consultation hours at the Main Campus?',

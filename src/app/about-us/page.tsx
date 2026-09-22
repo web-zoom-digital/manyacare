@@ -75,7 +75,7 @@ export default function AboutUsPage() {
   const locationCampuses = [
     {
       title: 'MANYACARE HealthCity Main Campus',
-      subtitle: 'Address- GH-07,Spring Meadows market,tech zone 4,Plot no-127,Block -A,Sector 12,Noida Extension ,ManyaCare HealthCity,Dr Jay SHANKARR',
+      subtitle: 'Address 1: GH-07, Spring Meadows Market, Tech Zone 4 | Address 2: Plot No-127, Block-A, Sector 12, Noida Extension, ManyaCare HealthCity, Dr Jay Shankar Market',
       phone: '+91-9953239561',
       labPhone: '+91-9953239562',
       hours: 'Mon - Sat: 8:00 AM - 8:00 PM | Sun: 9:00 AM - 2:00 PM',
